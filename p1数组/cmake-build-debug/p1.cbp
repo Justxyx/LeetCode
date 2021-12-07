@@ -81,6 +81,12 @@
 		<Unit filename="/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p1数组/main.cpp">
 			<Option target="p1"/>
 		</Unit>
+		<Unit filename="/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p1数组/p27.h">
+			<Option target="p1"/>
+		</Unit>
+		<Unit filename="/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p1数组/p724.h">
+			<Option target="p1"/>
+		</Unit>
 		<Unit filename="/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p1数组/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
