@@ -1,9 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <cmath>
-//#include "p724.h"
+//
+// Created by 肖应雄 on 2021/12/8.
+//
 
+#ifndef P1_P977_H
+#define P1_P977_H
 
 // 1. 暴力解法
 //class Solution {
@@ -33,13 +33,4 @@ public:
     }
 };
 
-
-int main() {
-    int nums[] = {-7,-3,2,3,11};
-
-    vector<int> cost(nums, nums + sizeof(nums) / sizeof(int));
-    Solution solution;
-    auto a = solution.sortedSquares(cost);
-    for (const auto &item : a)
-        cout << item << ",";
-}
+#endif //P1_P977_H
