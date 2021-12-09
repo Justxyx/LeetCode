@@ -4,42 +4,48 @@ using namespace std;
 #include <cmath>
 //#include "p724.h"
 
-
-// 1. 暴力解法
-//class Solution {
-//public:
-//    vector<int> sortedSquares(vector<int>& nums) {
-//        for ( auto &item : nums)
-//            item = pow(item,2);
-//        sort(nums.begin(), nums.end());
-//        return nums;
-//    }
-//};
-
-//2. 双指针发
+// p209
 class Solution {
 public:
-    vector<int> sortedSquares(vector<int>& nums) {
-        vector<int> num(nums.size(),0);
-        int p = nums.size() - 1;
-        int s = 0,e = p;
-        while ( s <= e){
-            if (pow(nums[s],2) > pow(nums[e],2))
-                num[p--] = pow(nums[s++],2);
-            else
-                num[p--] = pow(nums[e--],2);
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int i = 0, j = 0;
+        int min = 0;
+        int sum = nums[i];
+        while (j < nums.size()){
+
+            if (sum >= target){
+                if (min == 0){
+                    min = j - i + 1;
+                } else{
+                    if (min > (j - i + 1)){
+                        min = j - i + 1;
+                    }
+                }
+                if ( i < j ) {
+                    sum = sum - nums[i ++];
+                } else
+                {
+                    if (j == nums.size()-1)
+                        break;
+                    sum = sum + nums[++j];
+                }
+            } else  {
+                if (j == nums.size()-1)
+                    break;
+                sum = sum + nums[++j];
+
+            }
         }
-        return num;
+        return min;
     }
 };
 
 
 int main() {
-    int nums[] = {-7,-3,2,3,11};
-
+    int nums[] = {5,1,3,5,10,7,4,9,2,8};
+    int target = 15;
     vector<int> cost(nums, nums + sizeof(nums) / sizeof(int));
     Solution solution;
-    auto a = solution.sortedSquares(cost);
-    for (const auto &item : a)
-        cout << item << ",";
+    auto a = solution.minSubArrayLen(target,cost);
+    cout << a << endl;
 }
