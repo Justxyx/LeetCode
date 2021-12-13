@@ -4,48 +4,57 @@ using namespace std;
 #include <cmath>
 //#include "p724.h"
 
-// p209
+
+// 59
 class Solution {
 public:
-    int minSubArrayLen(int target, vector<int>& nums) {
-        int i = 0, j = 0;
-        int min = 0;
-        int sum = nums[i];
-        while (j < nums.size()){
-
-            if (sum >= target){
-                if (min == 0){
-                    min = j - i + 1;
-                } else{
-                    if (min > (j - i + 1)){
-                        min = j - i + 1;
-                    }
-                }
-                if ( i < j ) {
-                    sum = sum - nums[i ++];
-                } else
-                {
-                    if (j == nums.size()-1)
-                        break;
-                    sum = sum + nums[++j];
-                }
-            } else  {
-                if (j == nums.size()-1)
-                    break;
-                sum = sum + nums[++j];
-
+    vector<vector<int>> generateMatrix(int n) {
+        vector<vector<int>> res(n,vector<int>(n,0));
+        int i=0,j=0;    //  i 为横坐标 ， j 为纵坐标
+        int count = 1;
+        bool  b = true;
+        int time = (n+1)/2;
+        int big = n*n;
+        int isJ = n%2;
+        while (time>0){
+//            1.
+            for (int k = 0; k < n-1 ; ++k) {
+                res[i][j++] = count++;
             }
+//            2.
+            for (int k2 = 0; k2 < n-1 ; ++k2) {
+                res[i++][j] = count++;
+            }
+
+            for (int k2 = 0; k2 < n-1 ; ++k2) {
+                res[i][j--] = count++;
+            }
+
+            for (int k2 = 0; k2 < n-1 ; ++k2) {
+                res[i--][j] = count++;
+            }
+            if (time == 1 && (isJ) ){
+                res[i][j] = big;
+            }
+            time --;
+            n = n-2;
+            i++;
+            j++;
+
         }
-        return min;
+        return res;
     }
 };
 
 
 int main() {
-    int nums[] = {5,1,3,5,10,7,4,9,2,8};
-    int target = 15;
-    vector<int> cost(nums, nums + sizeof(nums) / sizeof(int));
+
+    int target = 1;
     Solution solution;
-    auto a = solution.minSubArrayLen(target,cost);
-    cout << a << endl;
+    auto a = solution.generateMatrix(target);
+    for (const auto &item : a){
+        for (const auto &item : item)
+            cout << item << "," ;
+        cout << endl;
+    }
 }
