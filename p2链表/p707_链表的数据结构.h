@@ -16,10 +16,10 @@ public:
     }
 
     int get(int index){
-     if ( index > (_size -1) || index < 0){
-         return  -1;
-     }
-     LinkNode *cur = _dummyHead->next;
+        if ( index > (_size -1) || index < 0){
+            return  -1;
+        }
+        LinkNode *cur = _dummyHead->next;
         while ( --index){
             cur = cur->next;
         }
@@ -87,6 +87,4 @@ private:
 
 
 
-int main() {
-    return 0;
-}
+

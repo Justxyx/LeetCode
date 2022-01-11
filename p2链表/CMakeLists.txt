@@ -3,4 +3,4 @@ project(p2)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p2 main.cpp p203.h)
+add_executable(p2 main.cpp p203.h p707_链表的数据结构.h)
