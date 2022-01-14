@@ -13,21 +13,42 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode *cur = head;
-        ListNode *pre = nullptr;
+    ListNode* swapPairs(ListNode* head) {
+        ListNode *cur = head->next;
         ListNode *next = nullptr;
-        while (cur){
-            next = cur->next;
-            cur->next = pre;
-            pre = cur;
-            cur = next;
+        ListNode *pre = head;
+        ListNode *prePre = nullptr;
+
+        ListNode *newHead = head;
+        int count = 1;
+        while (cur != nullptr){
+            if (count %2 != 0){
+
+                next = cur->next;
+                pre->next = next;
+                cur->next = pre;
+                if ( prePre != nullptr){
+                    prePre->next = cur;
+                }
+                prePre = pre;
+                pre = cur;
+                cur = next;
+
+                if (count == 1){
+                    newHead = prePre;
+                }
+            } else{
+                cur = cur->next;
+                prePre = pre;
+                pre = cur;
+            }
+            ++ count;
         }
-        return pre;
+        return  newHead;
     }
 };
 
-
 int main() {
-    return 0;
+
+    return  0;
 }
