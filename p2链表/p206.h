@@ -5,9 +5,7 @@
 #ifndef P2_P206_H
 #define P2_P206_H
 
-/**
- * p 206
- */
+
 struct ListNode {
     int val;
     ListNode *next;
