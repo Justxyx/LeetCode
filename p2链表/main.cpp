@@ -9,15 +9,6 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-class Solution {
-public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode *virtualHead = new ListNode;
-        virtualHead->next = head;
-
-
-    }
-};
 
 int main() {
 
