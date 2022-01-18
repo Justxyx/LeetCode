@@ -3,15 +3,19 @@
 using namespace std;
 #include <vector>
 #include <string>
+#include <unordered_set>
+
 
 
 
 
 int main() {
+
+    vector<int> a = {4,9,5};
+    vector<int> b = {9,4,9,8,4};
     Solution s;
-    vector<string> v = {"bella","label","roller"};
-    vector<string> v2 =  s.commonChars(v);
-    for (const auto &item : v2)
+    vector<int> ab =  s.intersection(a,b);
+    for (const auto &item : ab)
         cout << item << endl;
 
 
