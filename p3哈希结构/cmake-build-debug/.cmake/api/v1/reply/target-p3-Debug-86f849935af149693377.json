@@ -94,7 +94,8 @@
 			[
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -119,6 +120,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p349.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p202.h",
 			"sourceGroupIndex" : 1
 		}
 	],

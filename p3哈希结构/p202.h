@@ -1,23 +1,11 @@
-#include <iostream>
-#include <string>
-using namespace std;
-#include <vector>
-#include <string>
-#include <unordered_set>
+//
+// Created by 肖应雄 on 2022/1/19.
+//
 
-
-/**
- *      解题思路如下：
- *          是这样的，如果求平方过后的sum  重复出现  则return false
- *          否则 一直循环计算  直到sum = 1；
- */
-
-
-
-
+#ifndef P3_P202_H
+#define P3_P202_H
 class Solution {
 public:
-
     // 1. 求各位的平方
     int getItem(int n){
         int sum = 0;
@@ -31,7 +19,7 @@ public:
     bool isHappy(int n) {
         unordered_set<int> set;
         while (1){
-             n = getItem(n);
+            n = getItem(n);
             if ( n == 1){
                 return true;
             }
@@ -45,13 +33,4 @@ public:
 };
 
 
-
-int main() {
-
-    Solution solution;
-    cout << solution.isHappy(2) << endl;
-
-
-
-    return 0;
-}
+#endif //P3_P202_H
