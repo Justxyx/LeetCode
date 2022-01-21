@@ -1,55 +1,39 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include <stdio.h>
 #include <vector>
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
 
 
 /**
- *      解题思路如下：
- *          是这样的，如果求平方过后的sum  重复出现  则return false
- *          否则 一直循环计算  直到sum = 1；
+ * 算法思想：
+ *      并不需要key有序  所以采用unordered_map比较合适
+ *      依次遍历加入 unordered_map 中  target 依次减掉元素 看剩余差值是否还存在于map中
  */
-
-
-
 
 class Solution {
 public:
-
-    // 1. 求各位的平方
-    int getItem(int n){
-        int sum = 0;
-        while (n){
-            sum += (n%10)*(n%10);
-            n /= 10;
-        }
-        return sum ;
-    }
-
-    bool isHappy(int n) {
-        unordered_set<int> set;
-        while (1){
-             n = getItem(n);
-            if ( n == 1){
-                return true;
-            }
-            if (set.find(n) == set.end()){
-                set.insert(n);
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> map;
+        for (int i = 0; i < nums.size(); ++i) {
+            auto ptr = map.find((target - nums[i]));
+            if ( ptr == map.end()){
+                // has not found;
+                map.insert(make_pair(nums[i],i));
             } else{
-                return false;
+                return {ptr->second,i};
             }
         }
+        return {};
     }
 };
 
 
-
 int main() {
 
-    Solution solution;
-    cout << solution.isHappy(2) << endl;
 
 
 
