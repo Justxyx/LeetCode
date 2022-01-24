@@ -95,7 +95,10 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -125,6 +128,21 @@
 		{
 			"backtrace" : 1,
 			"path" : "p202.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p1.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "a_p454_四数之和.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "a_p15_三数之和.h",
 			"sourceGroupIndex" : 1
 		}
 	],

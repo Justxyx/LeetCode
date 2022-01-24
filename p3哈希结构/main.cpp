@@ -8,31 +8,24 @@ using namespace std;
 #include <unordered_map>
 
 
-/**
- * 算法思想：
- *      并不需要key有序  所以采用unordered_map比较合适
- *      依次遍历加入 unordered_map 中  target 依次减掉元素 看剩余差值是否还存在于map中
- */
 
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int,int> map;
-        for (int i = 0; i < nums.size(); ++i) {
-            auto ptr = map.find((target - nums[i]));
-            if ( ptr == map.end()){
-                // has not found;
-                map.insert(make_pair(nums[i],i));
-            } else{
-                return {ptr->second,i};
-            }
-        }
-        return {};
-    }
-};
+vector<int> method(){
+    vector<int> v{2,3,4};
+    return v;
+}
 
 
 int main() {
+    Solution solution;
+    vector<int> v{1,1,1};
+    vector<vector<int>> res;
+    res = solution.threeSum(v);
+    for (const auto &item1 : res){
+        for (const auto &item : item1)
+            cout << item << "," ;
+        cout << endl;
+    }
+
 
 
 
