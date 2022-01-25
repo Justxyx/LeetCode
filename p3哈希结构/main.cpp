@@ -9,25 +9,10 @@ using namespace std;
 
 
 
-vector<int> method(){
-    vector<int> v{2,3,4};
-    return v;
-}
-
-
 int main() {
     Solution solution;
-    vector<int> v{1,1,1};
-    vector<vector<int>> res;
-    res = solution.threeSum(v);
-    for (const auto &item1 : res){
-        for (const auto &item : item1)
-            cout << item << "," ;
-        cout << endl;
-    }
-
-
-
+    bool b = solution.canConstruct("az","ab");
+    cout << b << endl;
 
 
     return 0;
