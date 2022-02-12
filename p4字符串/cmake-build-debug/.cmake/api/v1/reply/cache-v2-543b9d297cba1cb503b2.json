@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构/cmake-build-debug"
+			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构"
+			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -795,7 +795,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "p3"
+			"value" : "p4"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1078,7 +1078,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "p3_BINARY_DIR",
+			"name" : "p4_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1087,10 +1087,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构/cmake-build-debug"
+			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串/cmake-build-debug"
 		},
 		{
-			"name" : "p3_IS_TOP_LEVEL",
+			"name" : "p4_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1102,7 +1102,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "p3_SOURCE_DIR",
+			"name" : "p4_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构"
+			"value" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串"
 		}
 	],
 	"kind" : "cache",

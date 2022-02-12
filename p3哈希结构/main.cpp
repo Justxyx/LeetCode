@@ -10,9 +10,6 @@ using namespace std;
 
 
 int main() {
-    Solution solution;
-    bool b = solution.canConstruct("az","ab");
-    cout << b << endl;
 
 
     return 0;

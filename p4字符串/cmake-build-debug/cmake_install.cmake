@@ -1,4 +1,4 @@
-# Install script for directory: /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p3哈希结构
+# Install script for directory: /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p3哈希结构/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

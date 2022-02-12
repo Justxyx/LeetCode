@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "p3",
+					"name" : "p4",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "p3::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-p3-Debug-1e92bca5192e1ce08d88.json",
-					"name" : "p3",
+					"id" : "p4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-p4-Debug-1d48e1ae820d478eccb4.json",
+					"name" : "p4",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构/cmake-build-debug",
-		"source" : "/Users/xiaoyingxiong/projects/ClionProjects/LetCode/p3哈希结构"
+		"build" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串/cmake-build-debug",
+		"source" : "/Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p4字符串"
 	},
 	"version" : 
 	{
