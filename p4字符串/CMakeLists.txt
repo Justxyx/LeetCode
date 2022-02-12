@@ -3,4 +3,4 @@ project(p4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p4 main.cpp)
+add_executable(p4 main.cpp p151.h)
