@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
-project(p4)
+project(p5)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p4 main.cpp p151.h offer51.h kmp.h)
+add_executable(p5 main.cpp p57.h p344.h)

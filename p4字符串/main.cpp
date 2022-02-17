@@ -9,14 +9,17 @@ using namespace std;
 #include <list>
 
 
+
+
+
+
+
 int main() {
-    Solution solution;
-//    solution.reverseWords("a     a");
-//    solution.reverseWords("the sky is blue");
-//    solution.reverseWords("a good   example");
-//    string s("hello word");
-//    cout << s << endl;
-//    cout << *(s.end() - `1) << endl;
-    solution.reverseLeftWords("hello",2);
+//    string s = "aabaaf";
+//    vector<int> v = next(s);
+//    for (const auto &item : v)
+
+//        cout << item << endl;
+//    cout << v.size() << endl;
     return 0;
 }
