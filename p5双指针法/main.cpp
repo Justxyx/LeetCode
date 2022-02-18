@@ -4,6 +4,9 @@ using namespace std;
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Solution solution;
+    solution.replaceSpace("     ");
+
+
     return 0;
 }
