@@ -3,4 +3,4 @@ project(p5)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p5 main.cpp p57.h p344.h offer05.h p151.h)
+add_executable(p5 main.cpp p57.h p344.h offer05.h p151.h 206.h)
