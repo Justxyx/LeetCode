@@ -1,20 +1,17 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <list>
+//
+// Created by 肖应雄 on 2022/2/21.
+//
 
-
- struct ListNode {
-         int val;
-         ListNode *next;
-         ListNode(int x) : val(x), next(NULL) {}
-     };
-
+#ifndef P5_面02_07_H
+#define P5_面02_07_H
+/**
+ * 这题目还挺坑的
+ */
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-            int lenA = 0;
-            int lenB = 0;
+        int lenA = 0;
+        int lenB = 0;
         ListNode *A = headA;
         ListNode *B = headB;
         while (A){
@@ -28,6 +25,8 @@ public:
         int count = 0;
         if (lenA == 0 || lenB == 0)
             return nullptr;
+        A = headA;
+        B = headB;
         if (lenA > lenB){
             count = lenA - lenB;
             while (count--)
@@ -37,8 +36,10 @@ public:
             while (count--)
                 B = B->next;
         }
+        // cout << A->val << endl;
+        // cout << B->val << endl;
         while ( A != nullptr){
-            if (A->val == B->val){
+            if (A == B){
                 return A;
             } else{
                 A = A->next;
@@ -48,15 +49,4 @@ public:
         return nullptr;
     }
 };
-
-
-
-
-int main() {
-    Solution solution;
-    ListNode A(1);
-    ListNode B(2);
-    solution.getIntersectionNode(&A,&B);
-
-    return 0;
-}
+#endif //P5_面02_07_H

@@ -4,7 +4,9 @@
 
 #ifndef P5_P19_H
 #define P5_P19_H
-
+/**
+ *  用好虚头结点  就返回virtualHead.next  不用考虑那么多为空的情况
+ */
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
