@@ -1,17 +1,18 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <list>
+//
+// Created by 肖应雄 on 2022/2/22.
+//
 
+#ifndef P5_P142_H
+#define P5_P142_H
 
- struct ListNode {
-         int val;
-         ListNode *next;
-         ListNode(int x) : val(x), next(NULL) {}
-     };
-
-
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
@@ -25,7 +26,7 @@ public:
         p1 = virtualHead;
         p2 = virtualHead;
         ListNode *node = nullptr;
-        while (p1->next != nullptr){
+        while (p1 != nullptr && p2 != nullptr){
             p1 = p1->next;
             p2 = p2->next;
             if (p2 == nullptr)
@@ -48,8 +49,4 @@ public:
         return p1;
     }
 };
-
-int main() {
-
-    return 0;
-}
+#endif //P5_P142_H
