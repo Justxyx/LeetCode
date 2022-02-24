@@ -2,8 +2,8 @@
 // Created by 肖应雄 on 2022/2/20.
 //
 
-#ifndef P5_206_H
-#define P5_206_H
+#ifndef P5_P206_H
+#define P5_P206_H
 
 /**
  *  好讨厌链表的题目
@@ -40,4 +40,4 @@ public:
     }
 };
 
-#endif //P5_206_H
+#endif //P5_P206_H
