@@ -1,13 +1,16 @@
 #include <iostream>
 #include <stack>
 using namespace std;
+#include <queue>
+
+
 
 
 int main() {
-    MyQueue queue;
-    queue.push(1);
-    queue.push(2);
-    int i = queue.pop();
-    cout << i << endl;
+    MyStack myStack;
+    myStack.push(1);
+    myStack.push(2);
+    cout << myStack.pop() << endl;
+
     return 0;
 }
