@@ -1,9 +1,9 @@
-#include <iostream>
-#include <stack>
-using namespace std;
-#include <queue>
+//
+// Created by 肖应雄 on 2022/3/1.
+//
 
-
+#ifndef P6_P150_H
+#define P6_P150_H
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
@@ -33,16 +33,4 @@ public:
         return stack.top();
     }
 };
-
-
-
-int main() {
-
-    string symbol = "+-*/";
-    int i =  symbol.find("2");
-    int s;
-    if (( symbol.find("2")) > 0){
-        cout << "h" << endl;
-    }
-    cout << i ;
-}
+#endif //P6_P150_H
