@@ -2,35 +2,24 @@
 #include <stack>
 using namespace std;
 #include <queue>
+#include <list>
 
 
 class Solution {
 public:
-    int evalRPN(vector<string>& tokens) {
-        string symbol = "+-*/";
-        stack<int> stack;
-        int x,y;
-        for (const string &item : tokens){
-//            cout << item << endl;
-            int i = symbol.find(item);
-            if (i < 0){  // 数字
-                stack.push(atoi(item.c_str()));
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        std::sort(nums.begin(), nums.end());
+        list<int> list;
+        vector<int> vector;
+        int count = 1;
+        for (int i = 0; i < nums.size(); ++i) {
+            if ((i+1 < nums.size()) && nums[i] == nums[i+1]){
+                ++count;
+                continue;
             } else{
-                x = stack.top();
-                stack.pop();
-                y = stack.top();
-                stack.pop();
-                if (item == "+")
-                    stack.push(x+y);
-                else if ( item == "-")
-                    stack.push(y-x);
-                else if (item == "*")
-                    stack.push(x*y);
-                else
-                    stack.push(y/x);
+
             }
         }
-        return stack.top();
     }
 };
 
@@ -38,11 +27,5 @@ public:
 
 int main() {
 
-    string symbol = "+-*/";
-    int i =  symbol.find("2");
-    int s;
-    if (( symbol.find("2")) > 0){
-        cout << "h" << endl;
-    }
-    cout << i ;
+
 }
