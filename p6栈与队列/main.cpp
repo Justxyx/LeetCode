@@ -6,35 +6,7 @@ using namespace std;
 #include <vector>
 
 
-/**
- * 挂了 超出时间限制
- */
-//class Solution {
-//public:
-//    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-//        vector<int>::iterator begin = nums.begin();
-//        vector<int>::iterator end = nums.end();
-//        vector<int>::iterator temp;
-//        vector<int> res;
-//        int max = NULL;
-//
-//        while ((begin+k) <= end){
-//            temp = begin;
-//            for (int i = 0; i < k; ++i) {
-//                if (max == NULL){
-//                    max = *temp;
-//                } else if (max < *temp){
-//                    max = * temp;
-//                }
-//                ++temp;
-//            }
-//            res.push_back(max);
-//            max = NULL;
-//            ++ begin;
-//        }
-//        return res;
-//    }
-//};
+
 
 
 //单调队列
@@ -64,7 +36,7 @@ public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         aloneQue aloneQue;
         int i;
-        for ( i = 0; i < k; ++i) {
+        for ( i = 0; i < k-1; ++i) {
             aloneQue.push(nums[i]);
         }
 //        --i;
