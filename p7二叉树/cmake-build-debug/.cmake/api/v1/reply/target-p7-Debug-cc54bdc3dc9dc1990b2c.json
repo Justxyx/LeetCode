@@ -92,7 +92,8 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -107,6 +108,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p94.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p144.h",
 			"sourceGroupIndex" : 1
 		}
 	],
