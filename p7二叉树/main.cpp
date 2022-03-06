@@ -1,9 +1,19 @@
 #include <iostream>
+using namespace std;
+#include <vector>
 
-int main() {
-    /**
-     * 递归
-     */
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
+
+
+
+int main(){
 }

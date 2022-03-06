@@ -3,4 +3,4 @@ project(p7)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p7 main.cpp)
+add_executable(p7 main.cpp p94.h)
