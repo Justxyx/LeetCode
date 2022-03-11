@@ -15,6 +15,7 @@ using namespace std;
 
 
 
+
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
@@ -23,7 +24,6 @@ int main(){
     node2.left = &node3;
 
     Solution solution;
-    vector<int> res =  solution.inorderTraversal(&root);
-    for (const auto &item : res)
-        cout << item;
+    solution.postorderTraversal(&root);
+
 }
