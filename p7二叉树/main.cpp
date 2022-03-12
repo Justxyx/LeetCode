@@ -13,9 +13,6 @@ using namespace std;
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
 
-
-
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
@@ -24,6 +21,6 @@ int main(){
     node2.left = &node3;
 
     Solution solution;
-    solution.postorderTraversal(&root);
+    solution.inorderTraversal(&root);
 
 }
