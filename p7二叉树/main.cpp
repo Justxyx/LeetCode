@@ -2,7 +2,7 @@
 using namespace std;
 #include <vector>
 #include <stack>
-
+#include <queue>
 
  struct TreeNode {
          int val;
@@ -19,8 +19,5 @@ int main(){
     TreeNode node3(3);
     root.right = &node2;
     node2.left = &node3;
-
-    Solution solution;
-    solution.inorderTraversal(&root);
 
 }
