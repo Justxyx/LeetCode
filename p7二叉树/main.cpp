@@ -27,34 +27,6 @@ using namespace std;
 */
 
 
-class Solution {
-public:
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        queue<TreeNode*> queue;
-        vector<vector<int>> res;
-        vector<int> bind;
-        if (!root) return res;
-        TreeNode *temp;
-        queue.push(root);
-        queue.push(nullptr);
-        while (!queue.empty()){
-            temp = queue.front();
-            if (temp != nullptr){
-                if (temp->left) queue.push(temp->left);
-                if (temp->right) queue.push(temp->right);
-                bind.push_back(temp->val);
-                queue.pop();
-            } else{
-                res.push_back(bind);
-                bind.clear();
-                queue.pop();
-                if (!queue.empty()) queue.push(nullptr);
-            }
-        }
-        std::reverse(res.begin(), res.end());
-        return res;
-    }
-};
 
 
 
