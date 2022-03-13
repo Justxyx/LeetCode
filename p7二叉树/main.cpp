@@ -39,4 +39,10 @@ int main(){
     node2.left = &node3;
     vector<int> res;
     std::reverse(res.begin(), res.end());
+
+
+    int i = 29;
+    int j = 2;
+    double  s = i/j;
+    cout << s << endl;
 }
