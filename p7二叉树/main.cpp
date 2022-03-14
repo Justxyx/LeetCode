@@ -3,33 +3,41 @@ using namespace std;
 #include <vector>
 #include <stack>
 #include <queue>
-
- struct TreeNode {
-         int val;
-         TreeNode *left;
-         TreeNode *right;
-         TreeNode() : val(0), left(nullptr), right(nullptr) {}
-         TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-         TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-     };
-
-
-/**
-* Definition for a binary tree node.
-* struct TreeNode {
-*     int val;
-*     TreeNode *left;
-*     TreeNode *right;
-*     TreeNode() : val(0), left(nullptr), right(nullptr) {}
-*     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-*     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-* };
-*/
+//
+// struct TreeNode {
+//         int val;
+//         TreeNode *left;
+//         TreeNode *right;
+//         TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//         TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//         TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//     };
 
 
+class Node {
+public:
+    int val;
+    vector<Node*> children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector<Node*> _children) {
+        val = _val;
+        children = _children;
+    }
+};
 
 
 
+
+
+
+#include <unistd.h>
+#include <netdb.h>
 
 int main(){
     TreeNode root(1);
@@ -40,9 +48,13 @@ int main(){
     vector<int> res;
     std::reverse(res.begin(), res.end());
 
+    struct hostent *hp;
+    char hostname[1024];
+    gethostname(hostname,1024);
+    hp = gethostbyname(hostname);
 
-    int i = 29;
-    int j = 2;
-    double  s = i/j;
+//    cout << hp->h_addr_list[0] << endl;
+
+    uint16_t s =   htons(12);
     cout << s << endl;
 }
