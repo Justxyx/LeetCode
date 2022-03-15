@@ -16,7 +16,7 @@ using namespace std;
 
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
+    int minDepth(TreeNode* root) {
         queue<TreeNode*> queue;
         int max = 0;
         if (root == nullptr) return 0;
@@ -28,6 +28,7 @@ public:
             for (int i = 0; i < size; ++i) {
                 temp = queue.front();
                 queue.pop();
+                if (temp->left == nullptr && temp->right == nullptr) return max;
                 if (temp->right) queue.push(temp->right);
                 if (temp->left) queue.push(temp->left);
             }
