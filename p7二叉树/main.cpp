@@ -14,16 +14,13 @@ using namespace std;
      };
 
 
-
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
     TreeNode node3(3);
     root.right = &node2;
     node2.left = &node3;
-    vector<int> res;
-    std::reverse(res.begin(), res.end());
+
 
 
 }
