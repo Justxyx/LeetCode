@@ -110,7 +110,8 @@
 				16,
 				17,
 				18,
-				19
+				19,
+				20
 			]
 		}
 	],
@@ -215,6 +216,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h101 对称二叉树.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p104 二叉树深度 递归.h",
 			"sourceGroupIndex" : 1
 		}
 	],

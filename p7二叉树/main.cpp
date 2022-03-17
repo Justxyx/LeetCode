@@ -21,6 +21,7 @@ int main(){
     root.right = &node2;
     node2.left = &node3;
 
-
+    Solution solution;
+    cout << solution.maxDepth(&root);
 
 }
