@@ -13,23 +13,6 @@ using namespace std;
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
 
-class Node {
-public:
-    int val;
-    vector<Node*> children;
-
-    Node() {}
-
-    Node(int _val) {
-        val = _val;
-    }
-
-    Node(int _val, vector<Node*> _children) {
-        val = _val;
-        children = _children;
-    }
-};
-
 
 int main(){
     TreeNode root(1);
@@ -38,7 +21,6 @@ int main(){
     root.right = &node2;
     node2.left = &node3;
 
-    Solution solution;
-    cout << solution.maxDepth(&root);
+
 
 }
