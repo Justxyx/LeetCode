@@ -22,9 +22,6 @@ int main(){
     root.right = &node2;
     node2.left = &node3;
 
-    Solution solution;
-    int i =  solution.lenDep(&root);
-    cout << i << endl;
 
     cout << abs(3 - 5);
 
