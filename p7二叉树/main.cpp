@@ -25,7 +25,7 @@ int main(){
     node2.left = &node3;
 
     Solution solution;
-    vector<string> vec = solution.binaryTreePaths(&root);
+    cout << solution.isBalanced(&root);
 
 
 
