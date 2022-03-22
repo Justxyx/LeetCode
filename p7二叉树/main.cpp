@@ -15,6 +15,8 @@ using namespace std;
 
 
 
+
+
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
@@ -22,7 +24,10 @@ int main(){
     root.right = &node2;
     node2.left = &node3;
 
+    Solution solution;
+    vector<string> vec = solution.binaryTreePaths(&root);
 
-    cout << abs(3 - 5);
+
+
 
 }
