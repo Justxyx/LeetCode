@@ -14,6 +14,44 @@ using namespace std;
      };
 
 
+ /**
+        if(subRoot == nullptr || isSameTree(root,subRoot)) return true;
+        if(root == nullptr && subRoot!=nullptr) return false;
+        return isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot);
+
+  */
+class Solution {
+public:
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+
+        bool b = isSameTree(root,subRoot);
+        if (b) return true;
+
+        bool left = isSubtree(root->left,subRoot);
+        bool right = isSubtree(root->right,subRoot);
+
+        return left || right;
+
+
+    }
+
+
+
+
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if (p == nullptr && q == nullptr) return true;
+        else if (p == nullptr || q == nullptr) return false;
+        else if (p->val != q->val) return false;
+
+        bool booLeft = isSameTree(p->left,q->left);
+        bool boolRight = isSameTree(p->right,q->right);
+        return booLeft*boolRight;
+    }
+};
+
+
+
+
 
 int main(){
     TreeNode root(1);
