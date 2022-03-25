@@ -2,8 +2,8 @@
 // Created by 肖应雄 on 2022/3/23.
 //
 
-#ifndef P7_P572_一棵树是否是另外一棵树子树_递归_H
-#define P7_P572_一棵树是否是另外一棵树子树_递归_H
+#ifndef P7_H572_一棵树是否是另外一棵树子树_递归_H
+#define P7_H572_一棵树是否是另外一棵树子树_递归_H
 
 class Solution {
 public:
@@ -28,4 +28,4 @@ public:
         return booLeft*boolRight;
     }
 };
-#endif //P7_P572_一棵树是否是另外一棵树子树_递归_H
+#endif //P7_H572_一棵树是否是另外一棵树子树_递归_H
