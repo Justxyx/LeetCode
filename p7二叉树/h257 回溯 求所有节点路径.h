@@ -2,8 +2,8 @@
 // Created by 肖应雄 on 2022/3/22.
 //
 
-#ifndef P7_H257_H
-#define P7_H257_H
+#ifndef P7_H257_回溯_求所有节点路径_H
+#define P7_H257_回溯_求所有节点路径_H
 
 class Solution {
 public:
@@ -42,4 +42,4 @@ public:
         }
     }
 };
-#endif //P7_H257_H
+#endif //P7_H257_回溯_求所有节点路径_H
