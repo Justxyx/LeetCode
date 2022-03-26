@@ -30,12 +30,15 @@ int main(){
     TreeNode root(1);
     TreeNode node2(2);
     TreeNode node3(3);
-    root.right = &node2;
-    node2.left = &node3;
+
+    root.left = &node2;
+    root.right = &node3;
+
+
 
     Solution solution;
-    solution.binaryTreePaths(&root);
 
+    solution.sumOfLeftLeaves(&root);
 
 
 
