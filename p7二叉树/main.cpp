@@ -21,44 +21,6 @@ using namespace std;
 
   */
 
- class Solution {
- public:
-     vector<string> binaryTreePaths(TreeNode* root) {
-            vector<string> res;
-            vector<string> vec;
-         solut(root,res,vec);
-         return res;
-     }
-
-     void solut(TreeNode *node,vector<string> &res,vector<string> &vec){
-
-
-         if (node->left == nullptr && node->right == nullptr){
-             vec.pop_back();
-             string s = "";
-             for (const auto &item : vec)
-                 s += item;
-             res.push_back(s);
-         }
-
-
-
-
-         if (node->left != nullptr){
-             solut(node->left,res,vec);
-            vec.pop_back();
-         }
-         if (node->right != nullptr)
-         {
-             solut(node->right,res,vec);
-             vec.pop_back();
-
-         }
-
-
-     }
- };
-
 
 
 
