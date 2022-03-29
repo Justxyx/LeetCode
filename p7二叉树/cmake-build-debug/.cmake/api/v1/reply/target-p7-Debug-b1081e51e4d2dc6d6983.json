@@ -124,7 +124,8 @@
 				30,
 				31,
 				32,
-				33
+				33,
+				34
 			]
 		}
 	],
@@ -299,6 +300,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p513 找到最左侧子结点 递归.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p112 路径总和.h",
 			"sourceGroupIndex" : 1
 		}
 	],

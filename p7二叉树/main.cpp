@@ -16,16 +16,15 @@ using namespace std;
 
 
 
-
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
-    TreeNode node3(3);
 
-//    root.left = &node2;
-    root.right = &node3;
+    root.left = &node2;
 
+    Solution solution;
+    cout <<
+    solution.hasPathSum(&root,2);
 
 
 }
