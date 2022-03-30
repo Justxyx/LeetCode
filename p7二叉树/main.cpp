@@ -4,6 +4,7 @@ using namespace std;
 #include <stack>
 #include <queue>
 #include <map>
+#include<numeric>
 
  struct TreeNode {
          int val;
@@ -23,8 +24,9 @@ int main(){
     root.left = &node2;
 
     Solution solution;
-    cout <<
-    solution.hasPathSum(&root,2);
+    solution.pathSum(&root,3);
+
+
 
 
 }
