@@ -78,12 +78,6 @@ build CMakeFiles/p7.dir/main.cpp.o: CXX_COMPILER__p7_Debug /Users/xiaoyingxiong/
   OBJECT_DIR = CMakeFiles/p7.dir
   OBJECT_FILE_DIR = CMakeFiles/p7.dir
 
-build CMakeFiles/p7.dir/p112_路径求和.cpp.o: CXX_COMPILER__p7_Debug /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p7二叉树/p112$ 路径求和.cpp || cmake_object_order_depends_target_p7
-  DEP_FILE = CMakeFiles/p7.dir/p112_路径求和.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -std=gnu++11
-  OBJECT_DIR = CMakeFiles/p7.dir
-  OBJECT_FILE_DIR = CMakeFiles/p7.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target p7
@@ -92,7 +86,7 @@ build CMakeFiles/p7.dir/p112_路径求和.cpp.o: CXX_COMPILER__p7_Debug /Users/x
 #############################################
 # Link the executable p7
 
-build p7: CXX_EXECUTABLE_LINKER__p7_Debug CMakeFiles/p7.dir/main.cpp.o CMakeFiles/p7.dir/p112_路径求和.cpp.o
+build p7: CXX_EXECUTABLE_LINKER__p7_Debug CMakeFiles/p7.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/p7.dir
   POST_BUILD = :

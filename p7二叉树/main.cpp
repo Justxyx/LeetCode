@@ -15,17 +15,17 @@ using namespace std;
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
 
-
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
 
-    root.left = &node2;
+    vector<int> in{9,3,15,20,7};
+    vector<int> po{9,15,7,20,3};
 
     Solution solution;
-    solution.pathSum(&root,3);
+    TreeNode *node =  solution.buildTree(in,po);
 
+    cout << node->val << endl;
 
 
 
