@@ -127,7 +127,8 @@
 				33,
 				34,
 				35,
-				36
+				36,
+				37
 			]
 		}
 	],
@@ -317,6 +318,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p106 构造二叉树 后序中序.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p105 构造二叉树 先序与中序.h",
 			"sourceGroupIndex" : 1
 		}
 	],

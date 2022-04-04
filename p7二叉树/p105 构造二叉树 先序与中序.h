@@ -1,24 +1,10 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <stack>
-#include <queue>
-#include <map>
-#include<numeric>
+//
+// Created by 肖应雄 on 2022/4/4.
+//
 
- struct TreeNode {
-         int val;
-         TreeNode *left;
-         TreeNode *right;
-         TreeNode() : val(0), left(nullptr), right(nullptr) {}
-         TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-         TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-     };
+#ifndef P7_P105_构造二叉树_先序与中序_H
+#define P7_P105_构造二叉树_先序与中序_H
 
-/*
- * 输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
-输出: [3,9,20,null,null,15,7]
- */
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
@@ -40,17 +26,4 @@ public:
 
     }
 };
-
-
-int main(){
-    TreeNode root(1);
-    TreeNode node2(2);
-
-    vector<int> in{3,9,20,15,7};
-    vector<int> po{9,3,15,20,7};
-
-
-    Solution solution;
-    solution.buildTree(in,po);
-
-}
+#endif //P7_P105_构造二叉树_先序与中序_H
