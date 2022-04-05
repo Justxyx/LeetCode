@@ -16,18 +16,18 @@ using namespace std;
      };
 
 
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
 
-    vector<int> in{3,9,20,15,7};
-    vector<int> po{9,3,15,20,7};
 
-    vector<int> num{3,2,1};
+    TreeNode roo2(2);
+    TreeNode node3(5);
+
+    root.left = &node2;
+    roo2.right = &node3;
 
     Solution solution;
-    solution.constructMaximumBinaryTree(num);
-
+    solution.mergeTrees(&root,&roo2);
 
 }
