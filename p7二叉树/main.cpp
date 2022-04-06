@@ -16,6 +16,7 @@ using namespace std;
      };
 
 
+
 int main(){
     TreeNode root(1);
     TreeNode node2(2);
@@ -28,6 +29,6 @@ int main(){
     roo2.right = &node3;
 
     Solution solution;
-    solution.mergeTrees(&root,&roo2);
-
+    TreeNode *node = nullptr;
+    solution.searchBST(node,1);
 }
