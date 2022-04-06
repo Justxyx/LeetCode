@@ -14,7 +14,16 @@ using namespace std;
          TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
+/**
+ * 节点的左子树只包含 小于 当前节点的数。
+节点的右子树只包含 大于 当前节点的数。
+ */
 
+/*
+ *              5
+ *            4   6
+ *              3   7
+ */
 
 
 int main(){
@@ -22,13 +31,11 @@ int main(){
     TreeNode node2(2);
 
 
-    TreeNode roo2(2);
-    TreeNode node3(5);
-
+    TreeNode node3(3);
     root.left = &node2;
-    roo2.right = &node3;
+    root.right = &node3;
 
     Solution solution;
-    TreeNode *node = nullptr;
-    solution.searchBST(node,1);
+    solution.isValidBST(&root);
+
 }
