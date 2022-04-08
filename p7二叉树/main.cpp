@@ -26,8 +26,6 @@ using namespace std;
  */
 
 
-
-
 int main(){
     TreeNode root(1);
     TreeNode node2(2);

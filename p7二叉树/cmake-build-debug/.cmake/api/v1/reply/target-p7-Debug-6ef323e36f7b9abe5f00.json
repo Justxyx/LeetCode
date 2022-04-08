@@ -133,7 +133,8 @@
 				39,
 				40,
 				41,
-				42
+				42,
+				43
 			]
 		}
 	],
@@ -353,6 +354,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h530.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h530 二叉树最小差值 递归 前节点.h",
 			"sourceGroupIndex" : 1
 		}
 	],
