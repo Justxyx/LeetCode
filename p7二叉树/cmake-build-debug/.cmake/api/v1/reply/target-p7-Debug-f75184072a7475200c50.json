@@ -134,7 +134,8 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44
 			]
 		}
 	],
@@ -359,6 +360,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h530 二叉树最小差值 递归 前节点.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p501 搜索二叉树的众数.h",
 			"sourceGroupIndex" : 1
 		}
 	],
