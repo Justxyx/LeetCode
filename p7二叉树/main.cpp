@@ -17,6 +17,47 @@ using namespace std;
      };
 
 
+class Solution {
+public:
+    pair<TreeNode*,int> pair;
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        int l = 0;
+        find(root,p,p,l);
+        return pair.first;
+    }
+
+    void find(TreeNode *root,TreeNode *p1,TreeNode *p2,int &l){
+        if (root == nullptr){
+            return;
+        }
+
+        ++l;
+        find(root->left,p1,p2,l);
+        find(root->right,p1,p2,l);
+
+        bool b = findNode(root,p1) * findNode(root,p2);
+        if (b){
+            if (pair.second > l){
+                pair.first = root;
+                pair.second = l;
+            }
+        }
+        return;
+    }
+
+    bool findNode(TreeNode *node,TreeNode *p){
+        if (node == nullptr)
+            return false;
+
+
+        if (node->val == p->val)
+            return true;
+
+
+        return findNode(node->left,p) || findNode(node->right,p);
+    }
+};
+
 
 
 int main(){
@@ -28,11 +69,7 @@ int main(){
     node1.right = &node3;
 
     Solution solution;
-    vector<int> res = solution.findMode(&node1);
-//    for (const auto &item : res)
-//        cout << item << endl;
-
-
+    cout << solution.findNode(&node3,&node4);
 
 
 }
