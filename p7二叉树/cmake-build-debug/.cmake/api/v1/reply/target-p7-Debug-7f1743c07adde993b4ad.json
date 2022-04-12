@@ -137,7 +137,8 @@
 				43,
 				44,
 				45,
-				46
+				46,
+				47
 			]
 		}
 	],
@@ -377,6 +378,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p236 公共祖先.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h236 递归 二叉树两个节点的祖先节点.h",
 			"sourceGroupIndex" : 1
 		}
 	],
