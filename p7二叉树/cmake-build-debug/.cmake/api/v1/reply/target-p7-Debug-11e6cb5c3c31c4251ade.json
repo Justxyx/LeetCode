@@ -139,7 +139,8 @@
 				45,
 				46,
 				47,
-				48
+				48,
+				49
 			]
 		}
 	],
@@ -389,6 +390,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h235 搜索二叉树的公共祖先.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h235 搜索二叉树的公共父节点 非递归写法.h",
 			"sourceGroupIndex" : 1
 		}
 	],

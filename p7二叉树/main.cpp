@@ -16,6 +16,10 @@ using namespace std;
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
 
+/*
+ * 核心思想 找到第一个落于p q 之间的点
+ */
+
 
 
 
