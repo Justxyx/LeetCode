@@ -16,9 +16,6 @@ using namespace std;
          TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
      };
 
-/*
- * 核心思想 找到第一个落于p q 之间的点
- */
 
 
 
@@ -31,8 +28,7 @@ int main(){
 
     node1.right = &node3;
 
-    Solution solution;
-    cout << solution.findNode(&node3,&node4);
+
 
 
 }
