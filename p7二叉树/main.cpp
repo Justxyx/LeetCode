@@ -18,84 +18,49 @@ using namespace std;
 
 class Solution {
 public:
-    TreeNode *cur = nullptr;
-    TreeNode *nextNode = nullptr;
-    TreeNode *preCur = nullptr;
-
-    bool isFind = false;
     TreeNode* deleteNode(TreeNode* root, int key) {
-        findNode(root,key);
-        if (cur == nullptr)
+        TreeNode *preNode = nullptr;
+        TreeNode *node = root;
+        TreeNode *nextNode = nullptr;
+
+        while (node != nullptr && node->val != key){
+            preNode = node;
+            if (node->val > key)
+                node = node->left;
+            else
+                node = node->right;
+        }
+
+        if (node == nullptr)
             return root;
 
+        //1. node为叶子节点
+        if (node->left == nullptr && node->right == nullptr){
+            delete node;
+        }
 
-        // 1. cur 为叶子节点
-        if (cur->left == nullptr && cur->right == nullptr){
-            delete cur;
-        } else if (cur->left == nullptr || cur->right != nullptr){
-            if (preCur->right == cur){
-                if (cur->left == nullptr)
-                    preCur->right = cur->right;
-                else
-                    preCur->right = cur->left;
+        // 2. 如果node有单子节点
+        else if (node->left == nullptr || node->right == nullptr){
+            if (node->left == nullptr){
+                preNode = node->right;
+                delete node;
             } else{
-                if (cur->right == nullptr)
-                    preCur->left = cur->left;
-                else
-                    preCur->left = cur->right;
+                preNode = node->left;
+                delete node;
             }
-        } else{
-            cur->val = nextNode->val;
-            if (nextNode->left == nullptr && nextNode->right == nullptr)
-                delete nextNode;
-            else{
-                if (cur->left == nextNode){
-                    if (nextNode->left != nullptr)
-                        cur->left = nextNode->left;
-                    else
-                        cur->left = nextNode->right;
-                } else{
-                    if (nextNode->left != nullptr)
-                        cur->right = nextNode->left;
-                    else
-                        cur->right = nextNode->right;
-                }
-            }
+        }
+
+        // 3. node有两个节点
+        else{
+
 
         }
+
+
+
         return root;
     }
-
-    TreeNode* findNode(TreeNode *node,int key){
-        if (node == nullptr)
-            return nullptr;
-
-
-        TreeNode *left = findNode(node->left, key);
-        if (left != nullptr)
-            return left;
-
-
-        /*
-         * 中节点处理逻辑
-         */
-        if (isFind){
-            nextNode = node;
-        }
-        if (node->val == key){
-            cur = node;
-        } else{
-            preCur = node;
-        }
-
-
-        TreeNode *right = findNode(node->right,key);
-        if (right != nullptr)
-            return right;
-        return nullptr;
-    }
 };
-
 
 
 int main(){
