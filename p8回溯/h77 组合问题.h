@@ -2,26 +2,45 @@
 // Created by 肖应雄 on 2022/4/15.
 //
 
+
 class Solution {
+private:
+    const string letterMap[10] = {
+            "",
+            "",
+            "abc",
+            "def",
+            "ghi",
+            "jkl",
+            "mno",
+            "pqrs",
+            "tuv",
+            "wxyz",
+    };
 public:
-    vector<int> path;
-    vector<vector<int>> res;
-    vector<vector<int>> combine(int n, int k) {
-        backtracking(n,k,1);
-        return res;
+    vector<string> result;
+    string s;
+    vector<string> letterCombinations(string digits) {
+        s.clear();
+        result.clear();
+        if (digits.size() == 0)
+            return result;
+        backtracking(digits,0);
+        return result;
     }
 
-    void backtracking(int n,int k,int index){
-        if (path.size() == k){
-            res.push_back(path);
+    void backtracking(const string &digits,int index){
+        if (index == digits.size()){
+            result.push_back(s);
             return;
         }
 
-        for (int i = index; i <= n ; ++i) {
-            path.push_back(i);
-            backtracking(n,k,++index);
-            path.pop_back();
+        int digit = digits[index] - '0';
+        string letter = letterMap[digit];
+        for (int i = 0; i < letter.size(); ++i) {
+            s.push_back(letter[i]);
+            backtracking(digits,index + 1);
+            s.pop_back();
         }
-        return;
     }
 };

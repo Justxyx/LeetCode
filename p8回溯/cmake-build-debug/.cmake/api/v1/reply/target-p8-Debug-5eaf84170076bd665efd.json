@@ -96,7 +96,9 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6,
+				7
 			]
 		}
 	],
@@ -131,6 +133,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "高新能服务器/p11-3.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "高新能服务器/lst_timer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "高新能服务器/p11-4.h",
 			"sourceGroupIndex" : 1
 		}
 	],
