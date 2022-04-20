@@ -6,8 +6,6 @@ using namespace std;
 
 
 int main() {
-    Solution solution;
-    solution.letterCombinations("294");
 
     return 0;
 }
