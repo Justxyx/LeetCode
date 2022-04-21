@@ -4,7 +4,6 @@ using namespace std;
 #include <numeric>
 
 
-
 int main() {
 
     return 0;
