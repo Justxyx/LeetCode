@@ -3,8 +3,8 @@ using namespace std;
 #include <vector>
 #include <numeric>
 
-
 int main() {
-
-    return 0;
+    Solution solution;
+    string s = "hey";
+    solution.backtracking(s,1);
 }
