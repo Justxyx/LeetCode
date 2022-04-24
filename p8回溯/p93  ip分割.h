@@ -1,8 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <numeric>
-#include <sstream>
+//
+// Created by 肖应雄 on 2022/4/24.
+//
+
+#ifndef P8_P93_IP分割_H
+#define P8_P93_IP分割_H
 
 class Solution {
 public:
@@ -23,7 +24,7 @@ public:
 
         for (int i = index; (i < s.size()) && ((i-index) <= 4); ++i) {
             string str(s.begin()+index,s.begin()+i+1);
-            if (i != index + 1 && atoi(string(s.begin()+index,s.begin()+index+1).c_str()) == 0){
+            if ( str.size() != 1 && atoi(string(s.begin()+index,s.begin()+index+1).c_str()) == 0){
                 cout << i << ":" << index;
                 return;
             }
@@ -54,16 +55,4 @@ public:
         return s;
     }
 };
-
-
-int main() {
-    string s("0123");
-
-    int i = 123;
-
-    stringstream  ss;
-    ss << i;
-    string s2 = ss.str();
-    cout << s2 << endl;
-
-}
+#endif //P8_P93_IP分割_H
