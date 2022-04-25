@@ -1,8 +1,6 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <numeric>
-#include <sstream>
+//
+// Created by 肖应雄 on 2022/4/25.
+//
 
 
 
@@ -11,8 +9,8 @@ public:
     vector<int> path;
     vector<vector<int>> res;
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        backtracking(nums,0);
         std::sort(nums.begin(), nums.end());
+        backtracking(nums,0);
         return res;
     }
 
@@ -33,8 +31,8 @@ public:
 };
 
 
-int main() {
-    string s("0123");
-    int i = atoi(s.c_str());
-    cout << i << endl;
-}
+
+
+
+
+
