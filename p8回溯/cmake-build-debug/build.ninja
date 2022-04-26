@@ -78,12 +78,6 @@ build CMakeFiles/p8.dir/main.cpp.o: CXX_COMPILER__p8_Debug /Users/xiaoyingxiong/
   OBJECT_DIR = CMakeFiles/p8.dir
   OBJECT_FILE_DIR = CMakeFiles/p8.dir
 
-build CMakeFiles/p8.dir/p90__子集II.cpp.o: CXX_COMPILER__p8_Debug /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p8回溯/p90$ $ 子集II.cpp || cmake_object_order_depends_target_p8
-  DEP_FILE = CMakeFiles/p8.dir/p90__子集II.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -std=gnu++11
-  OBJECT_DIR = CMakeFiles/p8.dir
-  OBJECT_FILE_DIR = CMakeFiles/p8.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target p8
@@ -92,7 +86,7 @@ build CMakeFiles/p8.dir/p90__子集II.cpp.o: CXX_COMPILER__p8_Debug /Users/xiaoy
 #############################################
 # Link the executable p8
 
-build p8: CXX_EXECUTABLE_LINKER__p8_Debug CMakeFiles/p8.dir/main.cpp.o CMakeFiles/p8.dir/p90__子集II.cpp.o
+build p8: CXX_EXECUTABLE_LINKER__p8_Debug CMakeFiles/p8.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/p8.dir
   POST_BUILD = :
