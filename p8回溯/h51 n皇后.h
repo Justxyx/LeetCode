@@ -1,10 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <numeric>
-#include <sstream>
-#include <set>
+//
+// Created by 肖应雄 on 2022/4/28.
+//
 
+#ifndef P8_H51_N皇后_H
+#define P8_H51_N皇后_H
 class Solution {
 public:
     vector<vector<string>> res;
@@ -62,39 +61,4 @@ public:
     }
 
 };
-
-
-
-//"Q...",
-//"...Q",
-//".Q..",
-//"..Q."],
-
-int main() {
-
-Solution solution;
-//    int i[2];
-//    cout << i[5] << endl;
-//vector<vector<string>> res = solution.solveNQueens(5);
-//    for (const auto &item : res)
-//        for (const auto i : item)
-//            cout << i << "," ;
-
-
-
-
-vector<vector<int>> test(4,vector<int>(4,0));
-test[0][0] = 1;
-test[1][3] = 1;
-    test[2][1] = 1;
-    test[3][2] = 1;
-cout << solution.isTure(3,2,test);
-
-
-//
-//    Solution solution;
-//   vector<string> res = solution.findItinerary(tickets);
-//    for (const auto &item : res)
-//        cout << item << endl;
-
-}
+#endif //P8_H51_N皇后_H
