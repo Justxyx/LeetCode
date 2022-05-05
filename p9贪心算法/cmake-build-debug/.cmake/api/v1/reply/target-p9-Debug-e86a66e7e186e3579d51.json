@@ -92,7 +92,8 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -107,6 +108,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p455 分饼干问题.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h376 .h",
 			"sourceGroupIndex" : 1
 		}
 	],

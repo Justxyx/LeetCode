@@ -1,30 +1,31 @@
-#include <iostream>
-using namespace std;
-#include <vector>
+//
+// Created by 肖应雄 on 2022/5/6.
+//
 
-/*
- * 局部最优 全局最优
- */
+#ifndef P9_H376_H
+#define P9_H376_H
 class Solution {
 public:
     int wiggleMaxLength(vector<int>& nums) {
-        int count = 0;
+        int count = 1;
 
 
         int i = 1;
         bool more = true;
         while (i < nums.size()){
             if (i == 1){
-                while (nums[i] == nums[i-1]){
+                while (i < nums.size() && nums[i] == nums[0]){
                     ++i;
                 }
+                if(i >= nums.size())
+                    break;
                 if (nums[i] > nums[0])
                     more = true;
-//                else if(nums[i] == nums[0]){
-//                    more = false;
-//                    ++i;
-//                    continue;
-//                }
+                else if(nums[i] == nums[0]){
+                    more = false;
+                    ++i;
+                    continue;
+                }
                 else
                     more = false;
                 ++ count;
@@ -52,10 +53,4 @@ public:
         return count;
     }
 };
-
-
-int main() {
-    vector<int> g = {1,7,4,9,2,5};
-    Solution solution;
-    solution.wiggleMaxLength(g);
-}
+#endif //P9_H376_H
