@@ -2,60 +2,23 @@
 using namespace std;
 #include <vector>
 
-/*
- * 局部最优 全局最优
- */
 class Solution {
 public:
-    int wiggleMaxLength(vector<int>& nums) {
+    int maxSubArray(vector<int>& nums) {
+        int result = INT32_MIN;
         int count = 0;
-
-
-        int i = 1;
-        bool more = true;
-        while (i < nums.size()){
-            if (i == 1){
-                while (nums[i] == nums[i-1]){
-                    ++i;
-                }
-                if (nums[i] > nums[0])
-                    more = true;
-//                else if(nums[i] == nums[0]){
-//                    more = false;
-//                    ++i;
-//                    continue;
-//                }
-                else
-                    more = false;
-                ++ count;
-                ++i;
-                continue;
+        for (int i = 0; i < nums.size(); i++) {
+            count += nums[i];
+            if (count > result) { // 取区间累计的最大值（相当于不断确定最大子序终止位置）
+                result = count;
             }
-
-            if ((nums[i] > nums[i-1]) && more){
-                more = true;
-            } else if ((nums[i] > nums[i-1]) && !more){
-                more = true;
-                ++ count;
-            } else if ((nums[i] < nums[i-1]) && more){
-                more = false;
-                ++ count;
-            } else if (nums[i] == nums[i-1]){
-                ++i;
-                continue;
-            }
-            else{
-                more = false;
-            }
-            ++ i;
+            if (count <= 0) count = 0; // 相当于重置最大子序起始位置，因为遇到负数一定是拉低总和
         }
-        return count;
+        return result;
     }
 };
-
-
 int main() {
-    vector<int> g = {1,7,4,9,2,5};
+    vector<int> g = {-2,-3,-5};
     Solution solution;
-    solution.wiggleMaxLength(g);
+    cout << solution.maxSubArray(g);
 }
