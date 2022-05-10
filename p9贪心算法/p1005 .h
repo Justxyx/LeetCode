@@ -1,14 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <numeric>
+//
+// Created by 肖应雄 on 2022/5/10.
+//
 
-
-
-/*
- * 寻找每一跳能到的最远距离
- */
-
+#ifndef P9_P1005_H
+#define P9_P1005_H
 
 class Solution {
 public:
@@ -32,7 +27,7 @@ public:
         }
 
         if (k > 0 && k%2 == 1 ){
-            if (nums[i] > nums[i-1])
+            if (i > 0 && nums[i] > nums[i-1])
                 nums[i-1] = -nums[i-1];
             else
                 nums[i] = -nums[i];
@@ -40,9 +35,4 @@ public:
         return accumulate(nums.begin(),nums.end(),0);
     }
 };
-
-int main() {
-    Solution solution;
-    vector<int> v{-8,3,-5,-3,-5,-2};
-    solution.largestSumAfterKNegations(v,6);
-}
+#endif //P9_P1005_H
