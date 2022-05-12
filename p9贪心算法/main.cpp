@@ -5,13 +5,9 @@ using namespace std;
 
 
 
+
 int main() {
-    vector<int> v1{1,2,3,4,5};
+    vector<int> v1{1,0,2};
     vector<int> v2{3,4,5,1,2};
-
     Solution solution;
-    solution.canCompleteCircuit(v1,v2);
-
-
-
 }
