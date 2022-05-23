@@ -6,6 +6,7 @@ using namespace std;
 #include <map>
 #include <iostream>
 #include <set>
+#include<math.h>
 ostream& operator<<(ostream &os,const vector<int> v){
     for (int i = 0; i < v.size(); ++i) {
         os << v[i] << ",";
@@ -19,6 +20,6 @@ ostream& operator<<(ostream &os,const vector<int> v){
 int main() {
     string s = "ababcbacadefegdehijhklij";
     Solution solution;
-    vector<vector<int>> v{{1,3},{2,6},{8,10},{15,18}};
-    solution.merge(v);
+    cout << solution.monotoneIncreasingDigits(11);
+
 }
