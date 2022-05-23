@@ -16,10 +16,9 @@ ostream& operator<<(ostream &os,const vector<int> v){
 
 
 
-
 int main() {
     string s = "ababcbacadefegdehijhklij";
     Solution solution;
-    solution.partitionLabels(s);
-
+    vector<vector<int>> v{{1,3},{2,6},{8,10},{15,18}};
+    solution.merge(v);
 }
