@@ -1,25 +1,20 @@
+
 #include <iostream>
 using namespace std;
-#include <vector>
-#include <numeric>
-#include <algorithm>
-#include <map>
-#include <iostream>
-#include <set>
-#include<math.h>
-ostream& operator<<(ostream &os,const vector<int> v){
-    for (int i = 0; i < v.size(); ++i) {
-        os << v[i] << ",";
-    }
-    return os;
-}
 
 
 
+  struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+      TreeNode() : val(0), left(nullptr), right(nullptr) {}
+      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ };
 
-int main() {
-    string s = "ababcbacadefegdehijhklij";
-    Solution solution;
-    cout << solution.monotoneIncreasingDigits(11);
 
+
+int main(){
+//    [0,0,0,null,null,null,0]
 }
