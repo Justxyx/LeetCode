@@ -95,7 +95,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -125,6 +126,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p62.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p63 路径规划 有障碍物.h",
 			"sourceGroupIndex" : 1
 		}
 	],
