@@ -3,4 +3,4 @@ project(p10)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p10 main.cpp p509.h h70.h p746.h p62.h "p63 路径规划 有障碍物.h")
+add_executable(p10 main.cpp p509.h h70.h p746.h p62.h "p63 路径规划 有障碍物.h" p343.h)

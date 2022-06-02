@@ -1,68 +1,36 @@
 #include <iostream>
 using namespace std;
 #include <vector>
+#include <math.h>
 
 
-class Solution {
-public:
-    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
-        int m = obstacleGrid.size(); // 纵
-        int n = obstacleGrid[0].size();
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (obstacleGrid[i][j] == 1){
-                    obstacleGrid[i][j] = -1;
-                    break;
-                }
-            }
-        }
+            /*
+             *   10
+             *   2  8   -> 16
+             *   2 2 2 2 2 -> 32
+             *   2 6 2 -> 24
+             *
+             *
+             *   f2 = 1;  2
+             *   f3 = 2;  3
+             *   f4 = 4;  4
+             *   f5 = 6;  6
+             *   f6 = 9;  9
+             *
+             *   7 = 5 + 2 = 4 + 3 = 2 + 2 + 3 = 12
+             *         10      12     12
+             *   8 = 6 + 2 =8 * 2 = 18
+             *   9 = 27
+             *   10 = 7 + 3 = 36;
+             *   11 = 54
+             *   11
+             */
 
-        for (int i = 0; i < m; ++i) {
-            if (obstacleGrid[i][0] == 0)
-                obstacleGrid[i][0] = 1;
-            else
-                break;
-        }
-        for (int i = 0; i < n; ++i) {
-            if (obstacleGrid[0][i] == 0)
-                obstacleGrid[0][i] = 1;
-            else
-                break;
-        }
-
-        for (int i = 1; i < m; ++i) {
-            for (int j = 1; j < n; ++j) {
-                if (obstacleGrid[i][j] == -1)
-                    break;
-                else if (obstacleGrid[i-1][j] == -1){
-                    obstacleGrid[i][j] = obstacleGrid[i][j-1];
-                } else if (obstacleGrid[i][j-1] == -1){
-                    obstacleGrid[i][j] = obstacleGrid[i-1][j];
-                } else{
-                    obstacleGrid[i][j] = obstacleGrid[i-1][j] + obstacleGrid[i][j-1];
-                }
-            }
-        }
-        for (const auto &item : obstacleGrid){
-            for (const auto &i : item){
-                cout << i << "," ;
-            }
-            cout << endl;
-        }
-        return obstacleGrid.back().back();
-    }
-};
 
 
 int main() {
-    int i = 3;
-    if (i >1){
-        cout << " i > 3";
-    } else if (i > 2 ){
-        cout << "i > 2";
-    } else{
-        cout << "else";
-    }
+    Solution solution;
+     cout << solution.integerBreak(10);
     return 0;
 }
 
