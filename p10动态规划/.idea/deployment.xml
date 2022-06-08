@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Linux (f075bda0-fa5a-4f8a-8a1d-52d1afec9ccf)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/p10动态规划" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

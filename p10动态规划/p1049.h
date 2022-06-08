@@ -1,8 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <math.h>
-#include <numeric>
+//
+// Created by 肖应雄 on 2022/6/8.
+//
+
+#ifndef P10_P1049_H
+#define P10_P1049_H
 
 class Solution {
 public:
@@ -12,7 +13,7 @@ public:
         for (int i = 0; i < stones.size(); ++i) {
             for (int j = 1; j < bind.size(); ++j) {
                 if ((bind[j] == 1) && ((j+stones[i]) < bind.size()) && (bind[j+stones[i]] == 0))
-                        bind[j+stones[i]] = -1;
+                    bind[j+stones[i]] = -1;
             }
             if (stones[i] < bind.size())
                 bind[stones[i]] = 1;
@@ -27,14 +28,6 @@ public:
         }
         return stones[0];
     }
+
 };
-
-
-int main() {
-    // 151
-    vector<int> v{2,7,4,1,8,1};
-    Solution solution;
-    cout << solution.lastStoneWeightII(v);
-    return 0;
-}
-
+#endif //P10_P1049_H
