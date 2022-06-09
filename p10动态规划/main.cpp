@@ -3,38 +3,49 @@ using namespace std;
 #include <vector>
 #include <math.h>
 #include <numeric>
+#include <set>
+#include <unordered_set>
 
 class Solution {
 public:
-    int lastStoneWeightII(vector<int>& stones) {
-        int sum = accumulate(stones.begin(),stones.end(),0);
-        vector<int> bind(sum/2+1,0);
-        for (int i = 0; i < stones.size(); ++i) {
-            for (int j = 1; j < bind.size(); ++j) {
-                if ((bind[j] == 1) && ((j+stones[i]) < bind.size()) && (bind[j+stones[i]] == 0))
-                        bind[j+stones[i]] = -1;
-            }
-            if (stones[i] < bind.size())
-                bind[stones[i]] = 1;
-            for (auto &item : bind){
-                if (item == -1)
-                    item = 1;
-            }
+    int findTargetSumWays(vector<int>& nums, int target) {
+        if (nums.size() == 1) {
+            return nums[0] == target ? 1 : 0;
         }
-        for (int i = bind.size()-1; i >= 0 ; --i) {
-            if (bind[i] == 1)
-                return sum - 2*i;
+        unordered_set<int> r_set, b_set;
+        int sum = 0;
+        r_set.insert(-nums[0]);
+        r_set.insert(nums[0]);
+        if (nums[0] == target)
+            ++ sum;
+        if (nums[0] == -target)
+            ++ sum;
+        for (int i = 1; i < nums.size(); ++i) {
+
+            for (const auto &i2: r_set) {
+                int right = i2 + nums[i];
+                int left = i2 - nums[i];
+                if (right == target) {
+                    ++sum;
+                }
+                if (left == target) {
+                    ++sum;
+                }
+                b_set.insert(left);
+                b_set.insert(right);
+            }
+            r_set.insert(b_set.begin(), b_set.end());
+            b_set.clear();
         }
-        return stones[0];
+
+        return sum;
     }
 };
 
-
 int main() {
-    // 151
-    vector<int> v{2,7,4,1,8,1};
+    vector<int> v{1,1,1,1,1};
     Solution solution;
-    cout << solution.lastStoneWeightII(v);
+    cout << solution.findTargetSumWays(v,3);
     return 0;
 }
 
