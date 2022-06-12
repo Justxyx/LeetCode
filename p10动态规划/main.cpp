@@ -6,46 +6,56 @@ using namespace std;
 #include <set>
 #include <unordered_set>
 
+
 class Solution {
 public:
+
+    int count_int(vector<int> &v,int res){
+        int count = 0;
+        for (const auto &item : v){
+            if (item == res)
+                ++ count;
+        }
+        return count;
+    }
+
     int findTargetSumWays(vector<int>& nums, int target) {
-        if (nums.size() == 1) {
-            return nums[0] == target ? 1 : 0;
-        }
-        unordered_set<int> r_set, b_set;
-        int sum = 0;
-        r_set.insert(-nums[0]);
-        r_set.insert(nums[0]);
-        if (nums[0] == target)
-            ++ sum;
-        if (nums[0] == -target)
-            ++ sum;
-        for (int i = 1; i < nums.size(); ++i) {
+        int sum = accumulate(nums.begin(),nums.end(),0);
+        if ( sum < target)
+            return 0;
+        int right = (sum + target) / 2;
 
-            for (const auto &i2: r_set) {
-                int right = i2 + nums[i];
-                int left = i2 - nums[i];
-                if (right == target) {
-                    ++sum;
+        int count = 0;
+
+        vector<int> bind(sum+1,0);
+        bind[0] = 1;
+        if (right == 0)
+            ++ count;
+        for (const auto &item : nums) {
+            for (int i = 0; i < bind.size(); ++i) {
+                if (bind[i] == 1 && bind[i+item] == 0) {
+                    bind[item + i] = -1;
+                    if ((item + i) == right) {
+                        count += count_int(nums,item);
+                    }
                 }
-                if (left == target) {
-                    ++sum;
-                }
-                b_set.insert(left);
-                b_set.insert(right);
             }
-            r_set.insert(b_set.begin(), b_set.end());
-            b_set.clear();
+            bind[item] = 1;
+            if (item == right)
+                ++ count;
+            for (auto &item : bind) {
+                if (item == -1)
+                 item = 1;
+            }
         }
-
-        return sum;
+        return count;
     }
 };
 
 int main() {
-    vector<int> v{1,1,1,1,1};
     Solution solution;
-    cout << solution.findTargetSumWays(v,3);
+    vector<int> v{1,1,1,1,1};
+    cout <<  solution.findTargetSumWays(v,3);
     return 0;
 }
 
