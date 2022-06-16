@@ -10,8 +10,11 @@ using namespace std;
 
 int main() {
     Solution solution;
-    vector<int> v{100};
-    cout << solution.findTargetSumWays(v,-200);
+    vector<string> v{"10","0001","111001","1","0"};
+    cout << solution.findMaxForm(v,4,3);
+
+
+
     return 0;
 }
 
