@@ -7,12 +7,10 @@ using namespace std;
 #include <unordered_set>
 
 
-
 int main() {
+    vector<int> v{1,2,5};
     Solution solution;
-    vector<string> v{"10","0001","111001","1","0"};
-    cout << solution.findMaxForm(v,4,3);
-
+    cout << solution.change(5,v);
 
 
     return 0;
