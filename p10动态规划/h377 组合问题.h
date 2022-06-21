@@ -1,10 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <math.h>
-#include <numeric>
-#include <set>
-#include <unordered_set>
+//
+// Created by 肖应雄 on 2022/6/21.
+//
+
+#ifndef P10_H377_组合问题_H
+#define P10_H377_组合问题_H
 class Solution {
 public:
     int combinationSum4(vector<int>& nums, int target) {
@@ -26,11 +25,4 @@ public:
         return res.back();
     }
 };
-int main() {
-    vector<int> v{1,2,3};
-    Solution solution;
-    cout << solution.combinationSum4(v,4);
-
-    return 0;
-}
-
+#endif //P10_H377_组合问题_H

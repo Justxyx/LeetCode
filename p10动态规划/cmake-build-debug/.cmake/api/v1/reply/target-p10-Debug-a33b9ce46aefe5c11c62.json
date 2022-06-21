@@ -104,7 +104,8 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14
 			]
 		}
 	],
@@ -179,6 +180,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p518 多重背包 找硬币问题.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h377 组合问题.h",
 			"sourceGroupIndex" : 1
 		}
 	],
