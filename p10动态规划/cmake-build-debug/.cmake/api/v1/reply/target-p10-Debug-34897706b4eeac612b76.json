@@ -106,7 +106,8 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				16
 			]
 		}
 	],
@@ -191,6 +192,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p70 多重背包爬楼梯问题.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p322 找零问题.h",
 			"sourceGroupIndex" : 1
 		}
 	],

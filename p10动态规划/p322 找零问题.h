@@ -1,19 +1,17 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <math.h>
-#include <numeric>
-#include <set>
-#include <unordered_set>
+//
+// Created by xm on 2022/6/22.
+//
 
+#ifndef P10_P322_找零问题_H
+#define P10_P322_找零问题_H
 class Solution {
 public:
     static bool comp(int a, int b) {
         return a > b;
     }
     int coinChange(vector<int>& coins, int amount) {
-        if (*min_element(coins.begin(), coins.end()) > amount)
-            return -1;
+        if (amount == 0)
+            return 0;
         std::sort(coins.begin(), coins.end(), comp);
         vector<int> res(amount+1, 0);
         res[0] = 1;
@@ -34,13 +32,7 @@ public:
             int i = 3;
         }
         return res.back() == 0 ? -1:res.back();
+
     }
 };
-
-int main() {
-    vector<int> v{1,2,5};
-    Solution solution;
-    cout << solution.coinChange(v,11);
-    return 0;
-}
-
+#endif //P10_P322_找零问题_H
