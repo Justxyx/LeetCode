@@ -9,10 +9,11 @@ using namespace std;
 
 
 
-
 int main() {
+    string str = "leetcode";
+    vector<string> v{"leet", "code"};
     Solution solution;
-    cout << solution.numSquares(13);
+    cout << solution.wordBreak(str,v);
     return 0;
 }
 

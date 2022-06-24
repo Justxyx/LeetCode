@@ -19,6 +19,13 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="Remote Host (81d4031e-ff2d-4467-91d6-737ccea03648)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/p10动态规划" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Remote Host (b8228f88-24a9-453a-850f-7bc18c9aeb23)">
         <serverdata>
           <mappings>
