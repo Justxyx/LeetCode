@@ -8,12 +8,11 @@ using namespace std;
 #include <cmath>
 
 
-
 int main() {
-    string str = "leetcode";
-    vector<string> v{"leet", "code"};
+    vector<int> v{1,2};
+    cout << *max_element(v.begin(),v.begin()+2);
     Solution solution;
-    cout << solution.wordBreak(str,v);
+//    cout << solution.rob(v) << endl;
     return 0;
 }
 
