@@ -6,18 +6,12 @@ using namespace std;
 #include <set>
 #include <unordered_set>
 #include <cmath>
-class Solution {
-public:
-    int rob(vector<int>& nums) {
-
-    }
-};
 
 int main() {
-    vector<int> v{1,2};
-    cout << *max_element(v.begin(),v.begin()+2);
+    vector<int> v{2,7,9,3,1};
+//    cout << *max_element(v.begin(),v.begin()+2);
     Solution solution;
-//    cout << solution.rob(v) << endl;
+    cout << solution.rob(v) << endl;
     return 0;
 }
 
