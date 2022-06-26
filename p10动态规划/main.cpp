@@ -6,7 +6,12 @@ using namespace std;
 #include <set>
 #include <unordered_set>
 #include <cmath>
+class Solution {
+public:
+    int rob(vector<int>& nums) {
 
+    }
+};
 
 int main() {
     vector<int> v{1,2};
