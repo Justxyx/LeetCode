@@ -111,7 +111,8 @@
 				17,
 				18,
 				19,
-				20
+				20,
+				21
 			]
 		}
 	],
@@ -221,6 +222,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p231 继续打家劫舍.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h337 树形DP 打家劫舍3.h",
 			"sourceGroupIndex" : 1
 		}
 	],

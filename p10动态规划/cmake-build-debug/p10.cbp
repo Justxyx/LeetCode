@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/tmp/tmp.g5nc0PXXhm/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.B8H8RkGcOT/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/tmp/tmp.g5nc0PXXhm/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.B8H8RkGcOT/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="p10">
-				<Option output="/tmp/tmp.g5nc0PXXhm/cmake-build-debug/p10" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.g5nc0PXXhm/cmake-build-debug"/>
+				<Option output="/tmp/tmp.B8H8RkGcOT/cmake-build-debug/p10" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.B8H8RkGcOT/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 p10"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 p10"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="p10/fast">
-				<Option output="/tmp/tmp.g5nc0PXXhm/cmake-build-debug/p10" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/tmp/tmp.g5nc0PXXhm/cmake-build-debug"/>
+				<Option output="/tmp/tmp.B8H8RkGcOT/cmake-build-debug/p10" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.B8H8RkGcOT/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,57 +67,87 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 p10/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 p10/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/tmp/tmp.g5nc0PXXhm/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.B8H8RkGcOT/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.g5nc0PXXhm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/tmp/tmp.B8H8RkGcOT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/h70.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/h377 组合问题.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/main.cpp">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/h474 1 和 0.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p 01背包的基础代码.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/h494 目标和.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p1049.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/h70.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p343.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/main.cpp">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p416.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p 01背包的基础代码.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p509.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p1049.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p62.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p139 单词拆分问题.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p63 路径规划 有障碍物.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p198 打家劫舍.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p746.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p231 继续打家劫舍.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/p96.h">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p279.h">
 			<Option target="p10"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.g5nc0PXXhm/CMakeLists.txt">
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p322 找零问题.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p343.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p416.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p509.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p518 多重背包 找硬币问题.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p62.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p63 路径规划 有障碍物.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p70 多重背包爬楼梯问题.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p746.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/p96.h">
+			<Option target="p10"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.B8H8RkGcOT/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
