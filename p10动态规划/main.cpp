@@ -9,6 +9,10 @@ using namespace std;
 
 
 int main() {
+    Solution solution;
+
+
+    solution.longestCommonSubsequence("abcde","ace");
     return 0;
 }
 

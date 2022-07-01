@@ -119,7 +119,8 @@
 				25,
 				26,
 				27,
-				28
+				28,
+				29
 			]
 		}
 	],
@@ -269,6 +270,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h718 最长重复子数组.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h1143 最长公共子序列.h",
 			"sourceGroupIndex" : 1
 		}
 	],
