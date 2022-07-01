@@ -1,12 +1,9 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <math.h>
-#include <numeric>
-#include <set>
-#include <unordered_set>
-#include <cmath>
+//
+// Created by xm on 2022/7/1.
+//
 
+#ifndef P10_P674_H
+#define P10_P674_H
 class Solution {
 public:
     int findLengthOfLCIS(vector<int>& nums) {
@@ -18,15 +15,12 @@ public:
             if (nums[i] > nums[i-1])
                 ++ sum;
             else {
-                sum = 1;
                 maxs = max(sum,maxs);
+                sum = 1;
             }
         }
-        return maxs;
+        return max(sum,maxs);
     }
 };
 
-int main() {
-    return 0;
-}
-
+#endif //P10_P674_H
