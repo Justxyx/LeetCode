@@ -8,8 +8,6 @@ using namespace std;
 #include <cmath>
 
 
-
-
 int main() {
     Solution solution;
 
