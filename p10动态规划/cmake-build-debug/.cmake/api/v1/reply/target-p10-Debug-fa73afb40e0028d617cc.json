@@ -120,7 +120,8 @@
 				26,
 				27,
 				28,
-				29
+				29,
+				30
 			]
 		}
 	],
@@ -275,6 +276,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h1143 最长公共子序列.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p1035.h",
 			"sourceGroupIndex" : 1
 		}
 	],
