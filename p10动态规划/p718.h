@@ -1,19 +1,18 @@
-#include <iostream>
-using namespace std;
-#include <vector>
-#include <math.h>
-#include <numeric>
-#include <set>
-#include <unordered_set>
-#include <cmath>
+//
+// Created by xm on 2022/7/1.
+//
 
+#ifndef P10_P718_H
+#define P10_P718_H
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
-        if (s.empty() || t.empty())
+        if (s.empty() )
             return true;
-        vector<vector<int>> dp(s.size(), vector<int>(t.size(),0));
+        if (t.empty())
+            return false;
 
+        vector<vector<int>> dp(s.size(), vector<int>(t.size(),0));
 
         for (int i = 0; i < s.size(); ++i) {
             for (int j = 0; j < t.size(); ++j) {
@@ -42,14 +41,4 @@ public:
         return false;
     }
 };
-
-
-int main() {
-    Solution solution;
-
-
-
-    solution.isSubsequence("abc","ahbgdc");
-    return 0;
-}
-
+#endif //P10_P718_H
