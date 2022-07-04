@@ -126,7 +126,8 @@
 				32,
 				33,
 				34,
-				35
+				35,
+				36
 			]
 		}
 	],
@@ -311,6 +312,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h72.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h647 回文串.h",
 			"sourceGroupIndex" : 1
 		}
 	],

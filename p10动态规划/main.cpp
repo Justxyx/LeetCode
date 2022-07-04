@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-//= "intention", word2 = "execution"
+
 
 int main() {
 
@@ -18,7 +18,7 @@ int main() {
 //    s1.swap(s2);
 //    cout << s1 << s2 << endl;
     Solution solution;
-    cout << solution.minDistance("intention", "execution");
+    cout << solution.countSubstrings("aaa");
     return 0;
 }
 
