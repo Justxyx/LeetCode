@@ -9,6 +9,7 @@ using namespace std;
 
 
 
+//= "intention", word2 = "execution"
 
 int main() {
 
@@ -16,9 +17,8 @@ int main() {
 //    string s2 = "jay";
 //    s1.swap(s2);
 //    cout << s1 << s2 << endl;
-
     Solution solution;
-    cout  << solution.minDistance("sea", "eat");
+    cout << solution.minDistance("intention", "execution");
     return 0;
 }
 
