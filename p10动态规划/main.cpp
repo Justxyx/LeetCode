@@ -12,13 +12,13 @@ using namespace std;
 
 int main() {
 
-    Solution solution;
-    cout << solution.numDistinct("b","a");
 //    string s1 = "hello";
 //    string s2 = "jay";
 //    s1.swap(s2);
 //    cout << s1 << s2 << endl;
-    vector<vector<int>> v(1,{1});
+
+    Solution solution;
+    cout  << solution.minDistance("sea", "eat");
     return 0;
 }
 

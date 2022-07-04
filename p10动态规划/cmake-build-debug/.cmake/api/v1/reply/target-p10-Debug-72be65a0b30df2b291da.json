@@ -124,7 +124,8 @@
 				30,
 				31,
 				32,
-				33
+				33,
+				34
 			]
 		}
 	],
@@ -299,6 +300,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h115.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h583.h",
 			"sourceGroupIndex" : 1
 		}
 	],
