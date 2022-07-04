@@ -11,14 +11,16 @@ using namespace std;
 
 
 
+
 int main() {
 
 //    string s1 = "hello";
 //    string s2 = "jay";
 //    s1.swap(s2);
 //    cout << s1 << s2 << endl;
+
     Solution solution;
-    cout << solution.countSubstrings("aaa");
+    cout << solution.longestPalindromeSubseq("cbbd");
     return 0;
 }
 
