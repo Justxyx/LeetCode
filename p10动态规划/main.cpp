@@ -102,7 +102,7 @@ public:
 
 
 
-class Solution {
+class Solution4 {
 public:
     int maxProfit(vector<int>& prices) {
         vector<vector<int>> dp(prices.size(), vector<int>(4,0));
@@ -137,6 +137,7 @@ public:
 };
 
 
+
 int main() {
 
 //    string s1 = "hello";
@@ -144,8 +145,8 @@ int main() {
 //    s1.swap(s2);
 //    cout << s1 << s2 << endl;
     Solution solution;
-    vector<int> v{1};
-    cout << solution.maxProfit(v);
+    vector<int> v{1,3,7,5,10,3};
+    cout << solution.maxProfit(v,3);
     return 0;
 }
 
