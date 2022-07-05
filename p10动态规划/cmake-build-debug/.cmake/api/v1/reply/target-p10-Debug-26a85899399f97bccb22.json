@@ -128,7 +128,8 @@
 				34,
 				35,
 				36,
-				37
+				37,
+				38
 			]
 		}
 	],
@@ -323,6 +324,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "h516 回文2.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h188 买卖两次股票.h",
 			"sourceGroupIndex" : 1
 		}
 	],
