@@ -129,7 +129,8 @@
 				35,
 				36,
 				37,
-				38
+				38,
+				39
 			]
 		}
 	],
@@ -328,7 +329,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "h188 买卖两次股票.h",
+			"path" : "h188 买卖多次股票.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "h309 .h",
 			"sourceGroupIndex" : 1
 		}
 	],
