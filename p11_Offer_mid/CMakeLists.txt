@@ -3,4 +3,4 @@ project(p11_Offer_mid)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(p11_Offer_mid main.cpp p09.h)
+add_executable(p11_Offer_mid main.cpp p09.h "h30 min_stack.h")

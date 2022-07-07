@@ -1,8 +1,9 @@
-#include <iostream>
-#include <stack>
-using namespace std;
-#include <vector>
-#include <set>
+//
+// Created by xm on 2022/7/7.
+//
+
+#ifndef P11_OFFER_MID_H30_MIN_STACK_H
+#define P11_OFFER_MID_H30_MIN_STACK_H
 
 class MinStack {
 public:
@@ -30,14 +31,11 @@ public:
 
     int min() {
         if (!v.empty())
-            return v.back().first;
+            return v.back().second;
         return -1;
     }
 
 private:
     vector<pair<int,int>> v;
 };
-
-int main() {
-
-}
+#endif //P11_OFFER_MID_H30_MIN_STACK_H
