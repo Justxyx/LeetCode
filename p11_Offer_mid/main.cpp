@@ -4,18 +4,19 @@ using namespace std;
 #include <vector>
 #include <set>
 #include <deque>
-
-
-  struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode(int x) : val(x), next(NULL) {}
-  };
-
+#include <map>
 
 
 
 
 int main() {
-
+    Node *node = new Node(1);
+    node->next = new Node(2);
+    node->next->next = new Node(3);
+    Solution solution;
+    Node* n = solution.copyRandomList(node);
+    while (n) {
+        cout << n->val << endl;
+        n = n->next;
+    }
 }
