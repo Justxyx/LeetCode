@@ -94,7 +94,8 @@
 			[
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -119,6 +120,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p06 从头到尾打印链表.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "p24 翻转链表.h",
 			"sourceGroupIndex" : 1
 		}
 	],
