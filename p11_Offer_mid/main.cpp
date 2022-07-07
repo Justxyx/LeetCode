@@ -3,41 +3,33 @@
 using namespace std;
 #include <vector>
 #include <set>
+#include <deque>
 
-class MinStack {
+
+  struct ListNode {
+      int val;
+      ListNode *next;
+      ListNode(int x) : val(x), next(NULL) {}
+  };
+
+
+class Solution {
 public:
-    /** initialize your data structure here. */
-    MinStack() {
+    vector<int> reversePrint(ListNode* head) {
+        ListNode *temp = head;
+        int count = 1;
+        while (temp->next != nullptr) {
+            ++ count;
+            temp = temp->next;
+        }
+        vector<int> v(count,0);
+        while (head->next != nullptr) {
+            v[--count] = head->val;
+            head = head->next;
+        }
+        return v;
     }
-
-    void push(int x) {
-        int min_ele = x;
-        if (!v.empty())
-            min_ele = std::min(v.back().second, x);
-        v.push_back(make_pair(x, min_ele));
-    }
-
-    void pop() {
-        if (!v.empty())
-            v.pop_back();
-    }
-
-    int top() {
-        if (!v.empty())
-            return v.back().first;
-        return -1;
-    }
-
-    int min() {
-        if (!v.empty())
-            return v.back().first;
-        return -1;
-    }
-
-private:
-    vector<pair<int,int>> v;
 };
-
 int main() {
 
 }
