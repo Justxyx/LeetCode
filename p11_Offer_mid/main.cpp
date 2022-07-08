@@ -10,13 +10,7 @@ using namespace std;
 
 
 int main() {
-    Node *node = new Node(1);
-    node->next = new Node(2);
-    node->next->next = new Node(3);
-    Solution solution;
-    Node* n = solution.copyRandomList(node);
-    while (n) {
-        cout << n->val << endl;
-        n = n->next;
-    }
+    string s("abcdef");
+    s.reserve(3);
+    cout << s << endl;
 }
