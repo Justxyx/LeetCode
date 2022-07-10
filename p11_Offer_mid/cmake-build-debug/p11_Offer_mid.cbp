@@ -84,7 +84,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/day3.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/h30 min_stack.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/h35 复制复杂链表.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
 		<Unit filename="/tmp/tmp.AX03FvnNtg/main.cpp">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/p06 从头到尾打印链表.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/p09.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/p24 翻转链表.h">
 			<Option target="p11_Offer_mid"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.AX03FvnNtg/CMakeLists.txt">
