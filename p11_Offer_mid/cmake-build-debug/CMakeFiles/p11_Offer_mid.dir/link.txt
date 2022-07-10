@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/p11_Offer_mid.dir/main.cpp.o  -o p11_Offer_mid 

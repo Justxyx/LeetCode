@@ -8,44 +8,26 @@ using namespace std;
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
-        if (nums.empty())
-            return 0;
+    int missingNumber(vector<int>& nums) {
         int begin = 0;
         int end = nums.size() - 1;
         int mid = 0;
-        int count = 0;
-        while ( begin < end) {
-             mid = (begin+end)/2;
-            if (nums[mid] == target)
-                break;
-            else if (nums[mid] > target)
-                end = mid;
-            else
-                begin = mid + 1;
+        while (begin < end) {
+            mid = (begin+end)/2;
+            if (nums[mid] == mid)
+                begin = mid+1;
+             else
+                 end = mid;
         }
-        if (nums[mid] != target)
-            return 0;
-        else {
-            int i = 0;
-            while ( mid - i >= 0 && nums[mid-i] == target)
-            {
-                ++ count;
-                ++ i;
-            }
-            i = 1;
-            while (nums[mid+i] == target) {
-                ++ count;
-                ++ i;
-            }
-        }
-        return count;
+        while (mid < nums.size() && nums[mid] == mid)
+            ++ mid;
+        return mid;
     }
 };
 
 
+
 int main() {
-    vector<int> v{2, 2};
+    vector<int> v{1, 4};
     Solution solution;
-    cout << solution.search(v, 2);
 }
