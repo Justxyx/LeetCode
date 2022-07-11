@@ -8,26 +8,22 @@ using namespace std;
 
 class Solution {
 public:
-    int missingNumber(vector<int>& nums) {
-        int begin = 0;
-        int end = nums.size() - 1;
-        int mid = 0;
-        while (begin < end) {
-            mid = (begin+end)/2;
-            if (nums[mid] == mid)
-                begin = mid+1;
-             else
-                 end = mid;
+    char firstUniqChar(string s) {
+        vector<int> bind(26,0);
+        for (const auto &item : s) {
+            ++ bind[item - 97];
         }
-        while (mid < nums.size() && nums[mid] == mid)
-            ++ mid;
-        return mid;
+        for (const auto &item : s) {
+            if (bind[item-97] == 1)
+                return item;
+        }
+        return ' ';
     }
 };
 
 
-
 int main() {
-    vector<int> v{1, 4};
+
     Solution solution;
+    cout <<(int) 'a' << endl;
 }
