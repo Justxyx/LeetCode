@@ -5,25 +5,19 @@ using namespace std;
 #include <set>
 #include <deque>
 #include <map>
+#include <queue>
+ struct TreeNode {
+         int val;
+         TreeNode *left;
+         TreeNode *right;
+         TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     };
 
-class Solution {
-public:
-    char firstUniqChar(string s) {
-        vector<int> bind(26,0);
-        for (const auto &item : s) {
-            ++ bind[item - 97];
-        }
-        for (const auto &item : s) {
-            if (bind[item-97] == 1)
-                return item;
-        }
-        return ' ';
-    }
-};
 
 
 int main() {
-
+    TreeNode node(12);
+    node.left = new TreeNode(13);
     Solution solution;
-    cout <<(int) 'a' << endl;
+    solution.levelOrder(&node);
 }
