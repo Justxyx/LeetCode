@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/day 04.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/day 05.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.AX03FvnNtg/day 06.h">
+			<Option target="p11_Offer_mid"/>
+		</Unit>
 		<Unit filename="/tmp/tmp.AX03FvnNtg/day3.h">
 			<Option target="p11_Offer_mid"/>
 		</Unit>

@@ -14,10 +14,12 @@ using namespace std;
      };
 
 
-
 int main() {
-    TreeNode node(12);
-    node.left = new TreeNode(13);
+    TreeNode node(1);
+    node.left = new TreeNode(2);
+    node.right = new TreeNode(2);
+
+    TreeNode res(3);
     Solution solution;
-    solution.levelOrder(&node);
+    cout << solution.isSymmetric(&node);
 }
