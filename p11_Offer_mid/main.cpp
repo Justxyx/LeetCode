@@ -13,11 +13,18 @@ using namespace std;
          TreeNode(int x) : val(x), left(NULL), right(NULL) {}
      };
 
+ struct ListNode {
+         int val;
+         ListNode *next;
+         ListNode(int x) : val(x), next(NULL) {}
+     };
+
+
+
 
 
 int main() {
-    Solution solution;
-    cout << solution.lengthOfLongestSubstring("abc");
+
 }
 /*
  * 12258
