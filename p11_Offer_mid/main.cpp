@@ -6,7 +6,7 @@ using namespace std;
 #include <deque>
 #include <map>
 #include <queue>
-#include <cmath.h>
+
  struct TreeNode {
          int val;
          TreeNode *left;
@@ -22,9 +22,11 @@ using namespace std;
 
 
 
+
+
 int main() {
     Solution solution;
-
+    cout << solution.reverseWords("a  ");
 }
 /*
  * 12258
