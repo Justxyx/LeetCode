@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p10动态规划
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p10动态规划/cmake-build-debug
+CMake executable not found: /usr/bin/cmake Configure Disable profile
+
+Cannot get compiler information:
+	Unable to create a temporary file
