@@ -78,12 +78,6 @@ build CMakeFiles/p12_.dir/main.cpp.o: CXX_COMPILER__p12__Debug /Users/xiaoyingxi
   OBJECT_DIR = CMakeFiles/p12_.dir
   OBJECT_FILE_DIR = CMakeFiles/p12_.dir
 
-build CMakeFiles/p12_.dir/vector.cpp.o: CXX_COMPILER__p12__Debug /Users/xiaoyingxiong/projects/ClionProjects/LeetCode/p12$ 二刷/vector.cpp || cmake_object_order_depends_target_p12_
-  DEP_FILE = CMakeFiles/p12_.dir/vector.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -std=gnu++11
-  OBJECT_DIR = CMakeFiles/p12_.dir
-  OBJECT_FILE_DIR = CMakeFiles/p12_.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target p12_
@@ -92,7 +86,7 @@ build CMakeFiles/p12_.dir/vector.cpp.o: CXX_COMPILER__p12__Debug /Users/xiaoying
 #############################################
 # Link the executable p12_
 
-build p12_: CXX_EXECUTABLE_LINKER__p12__Debug CMakeFiles/p12_.dir/main.cpp.o CMakeFiles/p12_.dir/vector.cpp.o
+build p12_: CXX_EXECUTABLE_LINKER__p12__Debug CMakeFiles/p12_.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/p12_.dir
   POST_BUILD = :
