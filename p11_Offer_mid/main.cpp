@@ -22,13 +22,8 @@ using namespace std;
 
 
 
-
-
 int main() {
+    Solution solution;
+   cout << solution.movingCount(16, 16, 8);
+//    cout<< solution.resolve(01);
 }
-/*
- * 12258
- * b c c
- * b w
- * f b
- */
