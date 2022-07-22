@@ -311,7 +311,8 @@ public:
 
 
 //4. 排列问题
-class Solution {
+// 排列问题就一个思想 画图！！！！！！！！！！！！！！！
+class Solution46 {
 public:
     vector<int> path;
     vector<vector<int>> res;
@@ -335,9 +336,104 @@ public:
         }
     }
 };
+class Solution47 {
+public:
+    vector<int> path;
+    vector<vector<int>> res;
+    int path_size = 0;
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        vector<int> bind(nums.size(), 0);
+        path_size = nums.size();
+        std::sort(nums.begin(), nums.end());
+        backtracking(nums, bind);
+        return res;
+    }
+    void backtracking(vector<int> &nums, vector<int> &bind) {
+        if (path.size() == path_size)
+            res.push_back(path);
+        if (path.size() > path_size)
+            return;
+        set<int> back;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (back.find(nums[i]) != back.end())
+                continue;
+            if (bind[i])
+                continue;
+            back.insert(nums[i]);
+            path.push_back(nums[i]);
+            bind[i] = 1;
+            backtracking(nums, bind);
+            path.pop_back();
+            bind[i] = 0;
+        }
+        return;
+    }
+
+};
+
+
+class Solution {
+public:
+    int count = 0;
+    vector<vector<string>> res;
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<int>> bind(n, vector<int> (n, 0));
+        vector<int> used(n, 0);
+        backtracking(bind, 0, used);
+        cout << count << endl;
+        return res;
+    }
+
+    void backtracking(vector<vector<int>> &bind, int index, vector<int> &used) {
+
+        if (index == bind.size()) {
+            if ( judge(bind))
+                ++ count;
+            return;
+        }
+
+        for (int i = 0; i < bind.size(); ++i) {
+            if (used[i])
+                continue;
+            bind[index][i] = 1;
+            used[i] = 1;
+            backtracking(bind, index + 1, used);
+            bind[index][i] = 0;
+            used[i] = 0;
+        }
+    }
+
+    bool judge(vector<vector<int>> &bind) {
+        for (int i = 0; i < bind.size(); ++i) {
+            int x = i;
+            int y = 0;
+            int sum = 0;
+            while (x < bind.size() && y < bind.size()) {
+                sum += bind[x][y];
+                ++x;
+                ++y;
+                if (sum > 1)
+                    return false;
+            }
+            sum = 0;
+            y = i;
+            x = 0;
+            while (x < bind.size() && y < bind.size()) {
+                sum += bind[x][y];
+                ++x;
+                ++y;
+                if (sum > 1)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+};
+
 
 int main() {
-    vector<int> v{4,6,7,7};
     Solution solution;
+    solution.solveNQueens(4);
     return 0;
 }
