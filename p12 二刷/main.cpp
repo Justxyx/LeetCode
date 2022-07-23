@@ -372,7 +372,7 @@ public:
 };
 
 
-class Solution {
+class Solution51 {
 public:
     int count = 0;
     vector<vector<string>> res;
@@ -380,15 +380,17 @@ public:
         vector<vector<int>> bind(n, vector<int> (n, 0));
         vector<int> used(n, 0);
         backtracking(bind, 0, used);
-        cout << count << endl;
+        vector<vector<string>> vec = res;
         return res;
     }
 
     void backtracking(vector<vector<int>> &bind, int index, vector<int> &used) {
 
         if (index == bind.size()) {
-            if ( judge(bind))
+            if ( judge(bind)) {
                 ++ count;
+                processBind(bind);
+            }
             return;
         }
 
@@ -403,27 +405,36 @@ public:
         }
     }
 
+    void processBind(vector<vector<int>> &bind) {
+        vector<string> vec;
+        for (int i = 0; i < bind.size(); ++i) {
+            string s = "";
+            for (int j = 0; j < bind.size(); ++j) {
+                if (bind[i][j] == 0)
+                    s+='.';
+                else
+                    s+='Q';
+            }
+            vec.push_back(s);
+        }
+        res.push_back(vec);
+    }
+
+
     bool judge(vector<vector<int>> &bind) {
         for (int i = 0; i < bind.size(); ++i) {
-            int x = i;
-            int y = 0;
-            int sum = 0;
-            while (x < bind.size() && y < bind.size()) {
-                sum += bind[x][y];
-                ++x;
-                ++y;
-                if (sum > 1)
-                    return false;
-            }
-            sum = 0;
-            y = i;
-            x = 0;
-            while (x < bind.size() && y < bind.size()) {
-                sum += bind[x][y];
-                ++x;
-                ++y;
-                if (sum > 1)
-                    return false;
+            for (int j = 0; j < bind.size(); ++j) {
+                if (bind[i][j] == 1) {
+                    int x = i, y = j;
+                    while (++x < bind.size() && ++y < bind.size()) {
+                        if (bind[x][y] == 1)
+                            return false;
+                    }
+                    x = i, y = j;
+                    while (++x < bind.size() && --y >= 0)
+                        if (bind[x][y] == 1)
+                            return false;
+                }
             }
         }
         return true;
@@ -432,8 +443,79 @@ public:
 };
 
 
+class Solution {
+public:
+    void solveSudoku(vector<vector<char>>& board) {
+        vector<vector<int>> bind_x(9,vector<int>(10,0));  // 横排
+        vector<vector<int>> bind_y(9,vector<int>(10,0));  // 竖排
+        vector<vector<int>> bind_9(9,vector<int>(10,0));  // 九宫格
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                if (board[i][j] != '.') {
+                    bind_x[i][board[i][j] - 48] = 1;
+                    bind_y[j][board[i][j] - 48] = 1;
+                    int box = (i/3) * 3 + (j/3);
+                    bind_9[box][board[i][j] - 48] = 1;
+                }
+            }
+        }
+        backtracking(bind_x, bind_y, bind_9, board, 0, 0);
+        cout << "hey" << endl;
+    }
+
+    void backtracking(vector<vector<int>> &bind_x, vector<vector<int>> &bind_y, vector<vector<int>> &bind_9, vector<vector<char>> &board, int x, int y) {
+        if (x == 9)
+            return;
+
+        for (int i = x; i < 9; ++i) {
+            for (int j = y; j < 9; ++j) {
+                if (board[i][j] == '.') {
+                    for (int k = 1; k < 10; ++k) {
+                        cout << "i" << i  << "j" << j << "k"  << k << endl;
+                        int box = (i/3) * 3 + (j/3);
+                        if (bind_x[i][k] != 1 && bind_y[j][k] != 1 && bind_9[box][k] != 1) {
+                            if (k == 8) {
+                                cout << "h" << endl;
+                            }
+                            board[i][j] = k + 48;
+                            bind_x[i][k] = 1 ;
+                            bind_y[j][k] = 1 ;
+                            bind_9[box][k] = 1;
+                            int s = i;
+                            int z = j;
+                            if (z == 8) {
+                                s++;
+                                z = 0;
+                            } else
+                                ++ z;
+                            backtracking(bind_x,bind_y,bind_9,board,s,z);
+                            bind_x[i][k] = 0 ;
+                            bind_y[j][k] = 0 ;
+                            bind_9[box][k] = 0;
+                        } else{
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+        return;
+    }
+
+};
+
 int main() {
     Solution solution;
-    solution.solveNQueens(4);
+    vector<vector<char>> v{{'5','3','.','.','7','.','.','.','.'},
+                           {'6','.','.','1','9','5','.','.','.'},
+                           {'.','9','8','.','.','.','.','6','.'},
+                           {'8','.','.','.','6','.','.','.','3'},
+                           {'4','.','.','8','.','3','.','.','1'},
+                           {'7','.','.','.','2','.','.','.','6'},
+                           {'.','6','.','.','.','.','2','8','.'},
+                           {'.','.','.','4','1','9','.','.','5'},
+                           {'.','.','.','.','8','.','.','7','9'}};
+
+    solution.solveSudoku(v);
     return 0;
 }
