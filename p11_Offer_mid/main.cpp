@@ -6,6 +6,7 @@ using namespace std;
 #include <deque>
 #include <map>
 #include <queue>
+#include <numeric>
 
  struct TreeNode {
          int val;
@@ -21,9 +22,7 @@ using namespace std;
      };
 
 
-
 int main() {
     Solution solution;
-   cout << solution.movingCount(16, 16, 8);
 //    cout<< solution.resolve(01);
 }
