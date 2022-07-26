@@ -19,10 +19,10 @@ using namespace std;
          int val;
          ListNode *next;
          ListNode(int x) : val(x), next(NULL) {}
-     };
-
+     }
 
 int main() {
     Solution solution;
-//    cout<< solution.resolve(01);
+    vector<int> v{11,10,0,0,12};
+    cout << solution.isStraight(v);
 }
