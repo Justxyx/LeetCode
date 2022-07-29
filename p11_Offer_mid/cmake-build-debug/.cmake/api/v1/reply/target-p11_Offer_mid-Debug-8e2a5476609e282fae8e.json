@@ -110,7 +110,9 @@
 				16,
 				17,
 				18,
-				19
+				19,
+				20,
+				21
 			]
 		}
 	],
@@ -215,6 +217,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "day 16.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "排序.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "day 17.h",
 			"sourceGroupIndex" : 1
 		}
 	],
