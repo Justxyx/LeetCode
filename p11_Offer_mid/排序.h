@@ -95,4 +95,33 @@ public:
     }
 };
 
+
+/*
+ * 选择排序
+ */
+// 堆排序
+class Solution {
+public:
+    vector<int> sortArray(vector<int>& nums) {
+        for (int i = (nums.size()/2-1); i >= 0; --i) {
+            adjust(nums,i);
+        }
+        return nums;
+    }
+
+    void adjust(vector<int> &heap, int index) {
+        int temp = 2 * index;
+        if (temp+2 < heap.size() && heap[temp + 1] < heap[temp + 2])
+            temp+=2;
+        else
+            ++ temp;
+
+        if (heap[index] > heap[temp])
+            return;
+        swap(heap[index], heap[temp]);
+        return;
+    }
+};
+
+
 #endif //P11_OFFER_MID_排序_H
