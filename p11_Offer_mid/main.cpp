@@ -24,10 +24,4 @@ using namespace std;
 
 
 int main() {
-    MedianFinder  m;
-    m.addNum(-1);
-    m.addNum(-2);
-    cout << m.findMedian() << endl;
-    m.addNum(-3);
-    cout << m.findMedian() << endl;
 }
