@@ -21,8 +21,9 @@ using namespace std;
          ListNode(int x) : val(x), next(NULL) {}
      };
 
+
 int main() {
-    vector<int> v{1,2,3,4,5};
+    vector<int> v{3,4,3,3};
     Solution solution;
-    solution.constructArr(v);
+    cout << solution.singleNumber(v);
 }

@@ -117,7 +117,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -257,6 +258,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "day 23.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "day 22.h",
 			"sourceGroupIndex" : 1
 		}
 	],
