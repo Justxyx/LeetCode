@@ -23,7 +23,7 @@ using namespace std;
 
 
 int main() {
-    vector<int> v2{1,2,5,10,6,9,4,3};
+    int a = 12;
     Solution solution;
-    cout << solution.verifyPostorder(v2);
+    cout << solution.add(1, 1);
 }
