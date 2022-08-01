@@ -22,6 +22,8 @@ using namespace std;
      };
 
 
-
 int main() {
+    vector<int> v2{1,2,5,10,6,9,4,3};
+    Solution solution;
+    cout << solution.verifyPostorder(v2);
 }
