@@ -25,8 +25,7 @@ using namespace std;
 
 int main() {
     Solution solution;
-    vector<int> v{1,2,3,4,5};
-    vector<int> v2{4,5,3,1,2};
-    cout <<solution.validateStackSequences(v, v2);
+    cout <<solution.strToInt("-91283472332");
+    string s = "123";
 
 }
