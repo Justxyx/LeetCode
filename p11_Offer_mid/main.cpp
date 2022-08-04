@@ -7,6 +7,7 @@ using namespace std;
 #include <map>
 #include <queue>
 #include <numeric>
+#include <stack>
 using namespace std;
  struct TreeNode {
          int val;
@@ -21,7 +22,11 @@ using namespace std;
          ListNode(int x) : val(x), next(NULL) {}
      };
 
+
 int main() {
     Solution solution;
-    cout << solution.lastRemaining(5, 3);
+    vector<int> v{1,2,3,4,5};
+    vector<int> v2{4,5,3,1,2};
+    cout <<solution.validateStackSequences(v, v2);
+
 }
