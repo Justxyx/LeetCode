@@ -26,5 +26,7 @@ using namespace std;
 
 int main() {
     Solution solution;
-    solution.maxSlidingWindow()
+    for (const auto &item : solution.permutation("abc")) {
+        cout << item << endl;
+    }
 }

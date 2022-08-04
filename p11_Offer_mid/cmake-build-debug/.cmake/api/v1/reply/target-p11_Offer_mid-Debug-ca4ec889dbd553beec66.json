@@ -122,7 +122,8 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32
 			]
 		}
 	],
@@ -287,6 +288,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "day 27 单调队列.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "day 28.h",
 			"sourceGroupIndex" : 1
 		}
 	],
