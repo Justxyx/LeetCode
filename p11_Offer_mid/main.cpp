@@ -1,4 +1,5 @@
 #include <iostream>
+//#include<bits/stdc++.h>
 #include <stack>
 using namespace std;
 #include <vector>
@@ -8,25 +9,30 @@ using namespace std;
 #include <queue>
 #include <numeric>
 #include <stack>
-using namespace std;
- struct TreeNode {
-         int val;
-         TreeNode *left;
-         TreeNode *right;
-         TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-     };
+#include <unordered_set>
 
- struct ListNode {
-         int val;
-         ListNode *next;
-         ListNode(int x) : val(x), next(NULL) {}
-     };
 
 
 
 int main() {
-    Solution solution;
-    for (const auto &item : solution.permutation("abc")) {
-        cout << item << endl;
+//    Solution solution;
+//    Point p1(1,1);
+//    Point p2(2,2);
+//    Point p3(1,3);
+//    Point p4(0,2);
+//    solution.getArea(p1, p2, p3, p4);
+
+    int n;
+    while (cin >> n) {
+        vector<int> gym(n);
+        vector<int> work(n);
+        for (int i = 0; i < n; i++) cin >> work[i];
+        for (int i = 0; i < n; i++) cin >> gym[i];
+        int result = 0;
+
+        // 处理逻辑
+
+        cout << result << endl;
     }
-}
+    return 0;
+};
