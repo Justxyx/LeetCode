@@ -137,7 +137,7 @@ public:
     }
 };
 
-class Solution {
+class Solution123 {
 public:
     /*
      * f1 =1;
@@ -163,9 +163,53 @@ public:
 };
 
 
-
 /*
  * 第三周
+ */
+class Solution416 {
+public:
+    bool canPartition(vector<int>& nums) {
+        int sum = accumulate(nums.begin(), nums.end(), 0);
+        if (sum % 2 == 1)
+            return false;
+        sum /= 2;
+        vector<int> dp(sum+1, 0);
+        dp[0] = 1;
+        for (const auto &item : nums) {
+            for (int i = sum; i > 0; --i) {
+                cout << i - item << endl;
+                if (i-item >= 0 && dp[i-item] == 1) {
+                    dp[i] = 1;
+                }
+            }
+            if (dp.back() == 1)
+                return true;
+        }
+        return false;
+    }
+};
+
+class Solution1049 {
+public:
+    int lastStoneWeightII(vector<int>& stones) {
+        int sum = accumulate(stones.begin(), stones.end(), 0);
+        vector<int> dp(sum/2+1, 0);
+        int maxs = 0;
+        dp[0] = 1;
+        for (const auto &item : stones) {
+            for (int i = sum/2; i > 0 ; --i) {
+                if (i-item >= 0 && dp[i-item] == 1) {
+                    dp[i] = 1;
+                    maxs = max(maxs, i);
+                }
+            }
+        }
+        return sum - 2 * maxs;
+    }
+};
+
+/*
+ * 第四周
  */
 class Solution494 {
 public:
@@ -201,5 +245,6 @@ public:
 
 int main() {
     Solution solution;
-    solution.numTrees(4);
+    vector<int> v{2,7,4,1,8,1};
+    solution.lastStoneWeightII(v);
 }
