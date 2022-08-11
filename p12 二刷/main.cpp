@@ -243,8 +243,50 @@ public:
     }
 };
 
+
+class Solution474 {
+public:
+    //  m -> 0   n -> 1
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        vector<vector<int>> dp(m+1, vector<int> (n+1, 0));
+        for (const auto &item : strs) {
+            int x = 0, y= 0;
+            for (int i = 0; i < item.size(); ++i) {
+                if (item[i] == '0')
+                    ++x;
+                else
+                    ++y;
+            }
+            for (int i = m; i >= x; --i) {
+                for (int j = n; j >= y; --j) {
+                    dp[i][j] = max(dp[i][j], dp[i-x][j-y]+1);
+                }
+            }
+        }
+        return dp.back().back();
+    }
+
+};
+
+class Solution518 {
+public:
+    int change(int amount, vector<int>& coins) {
+        vector<int> dp(amount+1, 0);
+        dp[0] = 1;
+        for (const auto &item : coins) {
+            for (int i = item; i < dp.size(); ++i) {
+                dp[i] += dp[i-item];
+            }
+        }
+        return dp.back();
+    }
+};
+
+/*
+ * 第五周
+ */
+
 int main() {
     Solution solution;
-    vector<int> v{2,7,4,1,8,1};
-    solution.lastStoneWeightII(v);
+    vector<string> v{"10","0001","111001","1","0"};
 }
