@@ -4,6 +4,7 @@ using namespace std;
 #include <numeric>
 #include <set>
 #include <list>
+#include <queue>
 
 /*
  * 第一周
@@ -285,8 +286,89 @@ public:
 /*
  * 第五周
  */
+class Solution377 {
+public:
+    int combinationSum4(vector<int>& nums, int target) {
+        vector<int> dp(target+1, 0);
+        dp[0] = 1;
+        for (int i = 1; i < dp.size(); ++i) {
+            for (const auto &item : nums) {
+                if (i-item >=0 && dp[i-item] != 0) {
+                    dp[i] += dp[i-item];
+                }
+            }
+        }
+        return dp.back();
+    }
+};
+
+
+class Solution701 {
+public:
+    int climbStairs(int n) {
+        vector<int> dp(n+1, 0);
+        dp[0] = 1;
+        for (int i = 1; i < dp.size(); ++i) {
+            for (int j = 1; j < 3; ++j) {
+                if (i-j >= 0 && dp[i-j] != 0)
+                    dp[i] += dp[i-j];
+            }
+        }
+        return dp.back();
+    }
+};
+
+class Solution322 {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        if (amount == 0)
+            return 0;
+        vector<int> dp(amount+1, 0);
+        dp[0] = 1;
+        for (int i = 1; i < dp.size(); ++i) {
+            for (const auto &item : coins) {
+                if (i - item >= 0 && dp[i-item] != 0) {
+                    if (i - item == 0)
+                        dp[i] = 1;
+                    else if (dp[i] == 0)
+                        dp[i] = dp[i-item]+1;
+                    else
+                        dp[i] = min(dp[i-item]+1, dp[i]);
+                }
+            }
+        }
+        if (dp.back() == 0)
+            return -1;
+        return dp.back();
+    }
+};
+
+class Solution279完全平方数 {
+public:
+    int numSquares(int n) {
+        vector<int> bag;
+        for (int i = 1; pow(i,2) < n; ++i) {
+            bag.push_back(pow(i, 2));
+        }
+        vector<int> dp(n+1, 0);
+        dp[0] = 1;
+        for (int i = 1; i < dp.size(); ++i) {
+            for (const auto &item : bag) {
+                if (i-item >= 0 && dp[i-item] != 0) {
+                    if (i-item == 0)
+                        dp[i] = 1;
+                    else if (dp[i] == 0)
+                        dp[i] = 1 + dp[i-item];
+                    else
+                        dp[i] = min(dp[i], dp[i-item]+1);
+                }
+            }
+        }
+        return dp.back();
+    }
+};
 
 int main() {
     Solution solution;
-    vector<string> v{"10","0001","111001","1","0"};
+    solution.numSquares(3);
 }
