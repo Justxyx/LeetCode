@@ -368,7 +368,74 @@ public:
     }
 };
 
+/*
+ * 第六周
+ */
+class Solution139 {
+public:
+    bool wordBreak(string s, vector<string>& wordDict) {
+        vector<int> dp(s.size()+1, 0);
+        dp[0] = 1;
+        for (int i = 1; i < dp.size(); ++i) {
+            for (const auto &item : wordDict) {
+                if (i  < item.size() || dp[i-item.size()] == 0)
+                    continue;
+                string str1 =  string(s.begin()+i-item.size(), s.begin()+i);
+                cout << str1 << endl;
+                if (string(s.begin()+i-item.size(), s.begin()+i) == item)
+                    dp[i] = 1;
+            }
+        }
+        return dp.back();
+    }
+};
+
+class Solution198 {
+public:
+    int rob(vector<int>& nums) {
+        if (nums.empty())
+            return 0;
+        int has = nums[0];
+        int no_has = 0;
+        for (int i = 1; i < nums.size(); ++i) {
+            int temp_nohas = no_has;
+            no_has = max(no_has, has);
+            has = max(has, temp_nohas+nums[i]);
+        }
+        return max(has, no_has);
+    }
+};
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        if (nums.empty())
+            return 0;
+        vector<int> dp(nums.size(), 0);
+        dp[0] = nums[0];
+        for (int i = 1; i < nums.size(); ++i) {
+            if (i-2 < 0)
+                dp[i] = max(dp[i-1], nums[i]);
+            else
+                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+        }
+        int maxs = dp.back();
+        nums.push_back(nums[0]);
+        dp.push_back(0);
+        nums[0] = 0;
+        dp.clear();
+        for (int i = 1; i < nums.size(); ++i) {
+            if (i-2 < 0)
+                dp[i] = max(dp[i-1], nums[i]);
+            else
+                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+        }
+        return max(maxs, dp.back());
+    }
+};
+
 int main() {
     Solution solution;
-    solution.numSquares(3);
+    vector<int> v{2,1,1,2};
+    solution.rob(v);
 }
