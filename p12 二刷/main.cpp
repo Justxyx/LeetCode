@@ -406,36 +406,97 @@ public:
     }
 };
 
-class Solution {
+class Solution231 {
 public:
     int rob(vector<int>& nums) {
         if (nums.empty())
             return 0;
         vector<int> dp(nums.size(), 0);
         dp[0] = nums[0];
-        for (int i = 1; i < nums.size(); ++i) {
+        for (int i = 1; i < nums.size()-1; ++i) {
             if (i-2 < 0)
                 dp[i] = max(dp[i-1], nums[i]);
             else
                 dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
         }
-        int maxs = dp.back();
-        nums.push_back(nums[0]);
-        dp.push_back(0);
-        nums[0] = 0;
-        dp.clear();
-        for (int i = 1; i < nums.size(); ++i) {
-            if (i-2 < 0)
+        int maxs = dp[dp.size()-2];
+        dp = vector<int> (nums.size(), 0);
+        dp[1] = 0;
+        for (int i = 2; i < nums.size(); ++i) {
+            if (i-3 < 0)
                 dp[i] = max(dp[i-1], nums[i]);
             else
                 dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
         }
-        return max(maxs, dp.back());
+        maxs = max(dp.back(), maxs);
+        dp = vector<int> (nums.size(), 0);
+        dp[1] = 0;
+        for (int i = 2; i < nums.size()-1; ++i) {
+            if (i-3 < 0)
+                dp[i] = max(dp[i-1], nums[i]);
+            else
+                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+        }
+        return max(dp.back(), maxs);
     }
 };
 
+  struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+      TreeNode() : val(0), left(nullptr), right(nullptr) {}
+      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+  };
+
+class Solution337 {
+public:
+
+    int rob(TreeNode* root) {
+        vector<int> res = deep(root);
+        return max(res[0], res[1]);
+    }
+    // 0 has  1 no_has
+    vector<int> deep(TreeNode *node) {
+        if (node == nullptr)
+            return vector<int>();
+        vector<int> left, right;
+        if (node->left != nullptr)
+            left = deep(node->left);
+        if (node->right != nullptr)
+            right = deep(node->right);
+
+        if (node->left == nullptr && node->right == nullptr)
+            return {node->val, 0};
+        else if (node->left != nullptr && node->right != nullptr)
+            return {node->val + left[1] + right[1], left[0]+right[0]};
+        else if (node->left != nullptr)
+            return {node->val+left[1], left[0]};
+        else
+            return {node->val+right[1], right[0]};
+    }
+};
+
+
+class Solution121 {
+public:
+    int maxProfit(vector<int>& prices) {
+        int has = prices[0];
+        int no_has = 0;
+        for (int i = 1; i < prices.size(); ++i) {
+            no_has = max(no_has, prices[i] - has);
+            has = min(has, prices[i]);
+        }
+        return no_has;
+    }
+};
+/*
+ * week5 -----------------------
+ */
+
 int main() {
     Solution solution;
-    vector<int> v{2,1,1,2};
-    solution.rob(v);
+    vector<int> v{7,1,5,3,6,4};
+    solution.maxProfit(v);
 }
