@@ -138,7 +138,7 @@ public:
     }
 };
 
-class Solution123 {
+class Solution123_ {
 public:
     /*
      * f1 =1;
@@ -393,51 +393,36 @@ public:
 class Solution198 {
 public:
     int rob(vector<int>& nums) {
-        if (nums.empty())
-            return 0;
-        int has = nums[0];
-        int no_has = 0;
+        vector<vector<int>> dp(nums.size(), vector<int>(2, 0));
+        // 0 偷  1  不偷
+        dp[0][0] = nums[0];
+        dp[0][1] = 0;
         for (int i = 1; i < nums.size(); ++i) {
-            int temp_nohas = no_has;
-            no_has = max(no_has, has);
-            has = max(has, temp_nohas+nums[i]);
+            dp[i][0] = dp[i-1][1] + nums[i];  // 今天投
+            dp[i][1] = max(dp[i-1][1] , dp[i-1][0]);  // 不偷
         }
-        return max(has, no_has);
+        return max(dp.back()[0], dp.back()[1]);
     }
 };
 
-class Solution231 {
+
+class Solution213 {
 public:
     int rob(vector<int>& nums) {
-        if (nums.empty())
-            return 0;
-        vector<int> dp(nums.size(), 0);
-        dp[0] = nums[0];
-        for (int i = 1; i < nums.size()-1; ++i) {
-            if (i-2 < 0)
-                dp[i] = max(dp[i-1], nums[i]);
-            else
-                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
-        }
-        int maxs = dp[dp.size()-2];
-        dp = vector<int> (nums.size(), 0);
-        dp[1] = 0;
+        if (nums.size() == 1)
+            return nums[0];
+        if (nums.size() == 2)
+            return max(nums[0], nums[1]);
+        vector<vector<int>> dp(nums.size(), vector<int>(2, 0));
+        dp[0][0] = nums[0];
+        dp[1][0] = max(nums[0], nums[1]);
+        dp[1][1] = nums[1];
+        dp[0][1] = 0;
         for (int i = 2; i < nums.size(); ++i) {
-            if (i-3 < 0)
-                dp[i] = max(dp[i-1], nums[i]);
-            else
-                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+            dp[i][0] = max(dp[i-2][0] + nums[i], dp[i-1][0]);
+            dp[i][1] = max(dp[i-2][1] + nums[i], dp[i-1][1]);
         }
-        maxs = max(dp.back(), maxs);
-        dp = vector<int> (nums.size(), 0);
-        dp[1] = 0;
-        for (int i = 2; i < nums.size()-1; ++i) {
-            if (i-3 < 0)
-                dp[i] = max(dp[i-1], nums[i]);
-            else
-                dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
-        }
-        return max(dp.back(), maxs);
+        return max(dp[dp.size()-2][0], dp.back()[1]);
     }
 };
 
@@ -450,31 +435,22 @@ public:
       TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
   };
 
-class Solution337 {
-public:
 
+class Solution {
+public:
     int rob(TreeNode* root) {
-        vector<int> res = deep(root);
+        vector<int> res = find(root);
         return max(res[0], res[1]);
     }
-    // 0 has  1 no_has
-    vector<int> deep(TreeNode *node) {
-        if (node == nullptr)
-            return vector<int>();
-        vector<int> left, right;
-        if (node->left != nullptr)
-            left = deep(node->left);
-        if (node->right != nullptr)
-            right = deep(node->right);
 
-        if (node->left == nullptr && node->right == nullptr)
-            return {node->val, 0};
-        else if (node->left != nullptr && node->right != nullptr)
-            return {node->val + left[1] + right[1], left[0]+right[0]};
-        else if (node->left != nullptr)
-            return {node->val+left[1], left[0]};
-        else
-            return {node->val+right[1], right[0]};
+    vector<int> find(TreeNode *node) {
+        if (node == nullptr)
+            return {0, 0};
+          //  0  偷  1  不偷
+        vector<int> left = find(node->left);
+        vector<int> right = find(node->right);
+
+        return {node->val + left[1] + right[1], max(left[0], left[1]) + max(right[0], right[1]) };
     }
 };
 
@@ -494,9 +470,117 @@ public:
 /*
  * week5 -----------------------
  */
+class Solution122 {
+public:
+    int maxProfit(vector<int>& prices) {
+        int has = -prices[0];
+        int no_has = 0;
+        for (int i = 1; i < prices.size(); ++i) {
+            no_has = max(no_has, prices[i] + has);   // 不持有
+            has = max(has, no_has - prices[i]);
+        }
+        return no_has;
+    }
+};
 
+class Solution123 {
+public:
+    int maxProfit(vector<int>& prices) {
+        if (prices.size() < 2)
+            return 0;
+        vector<vector<int>> dp(prices.size(), vector<int>(5, 0));  //   1 2 第一次买入卖出 34 第二次买入卖出
+
+        dp[0][1] = -prices[0]; // 第一次持有
+        dp[0][2] = 0;   // 第一次不持有
+        dp[0][3] = -prices[0];   // 第二次持有
+        dp[0][4] = 0;   // 第二次不持有
+
+        for (int i = 1; i < prices.size(); ++i) {
+            dp[i][1] = max(dp[i-1][1], - prices[i]);  // 持有 昨天持有 今天也持有  昨天不持有 今天持有
+            dp[i][2] = max(dp[i-1][2], dp[i-1][1] + prices[i]); // 不持有  昨天不持有 今天也不持有 昨天持有 今天卖掉
+
+            dp[i][3] = max(dp[i-1][3], dp[i-1][2] - prices[i]);   // 第二次持有
+            dp[i][4] = max(dp[i-1][4], dp[i-1][3] + prices[i]) ; // 第二次不持有 在第二次持有的基础上卖掉
+        }
+        return max(dp.back()[2], dp.back()[4]);
+    }
+};
+
+class Solution188 {
+public:
+    int maxProfit(int k, vector<int>& prices) {
+        vector<vector<int>> dp(prices.size(), vector<int>(2*k+1, 0));
+        // 奇数持有  双数不持有
+
+        // 初始化
+        for (int i = 0; i < prices.size(); ++i) {
+            for (int j = 1; j < 2*k+1; j = j+2) {
+                dp[i][j] = -prices[0];
+            }
+        }
+
+        for (int i = 1; i < prices.size(); ++i) {
+            dp[i][1] = max(dp[i-1][1], -prices[i]);  // 第一次持有
+            dp[i][2] = max(dp[i-1][2], dp[i-1][1] + prices[i]);  // 第一次不持有
+
+            for (int j = 3; j < 2*k+1; ++j) {
+                if (j & 1 == 1) {   // 奇数 持有
+                    dp[i][j] = max(dp[i-1][j], dp[i-1][j-1] - prices[i]);
+                } else {  // 偶数 不持有
+                    dp[i][j] = max(dp[i-1][j], dp[i-1][j-1] + prices[i]);
+                }
+            }
+        }
+
+        int res = 0;
+        for (int i = 2; i < 2*k+1; i = i+2) {
+            res = max(res, dp.back()[i]);
+        }
+        return res;
+    }
+};
+
+class Solution309 {
+public:
+    int maxProfit(vector<int>& prices) {
+        vector<vector<int>> dp(prices.size(), vector<int>(4, 0));
+        /*
+         *      1  ->  持有
+         *      2  ->  不持有 当天卖出  第二天冷冻
+         *      3  ->  不持有 但不是当天卖出
+         */
+        dp[0][1] = -prices[0];
+        dp[0][2] = 0;
+        dp[0][3] = 0;
+        for (int i = 1; i < prices.size(); ++i) {
+            dp[i][1] = max(dp[i-1][1],dp[i-1][3] -prices[i]);  // 持有
+            dp[i][2] = dp[i-1][1] + prices[i];
+            dp[i][3] = max(dp[i-1][2], dp[i-1][3]);
+        }
+        return max(dp.back()[2], dp.back()[3]);
+    }
+};
+
+
+/*
+ *   ------ week 7
+ */
+
+class Solution714 {
+public:
+    int maxProfit(vector<int>& prices, int fee) {
+        vector<vector<int>> dp(prices.size(), vector<int>(3, 0));
+        // 1 持有  2 不持有
+        dp[0][1] = -prices[0] - fee;
+        for (int i = 1; i < prices.size(); ++i) {
+            dp[i][1] = max(dp[i-1][1], dp[i-1][2] - prices[i] - fee);
+            dp[i][2] = max(dp[i-1][2], dp[i-1][1] + prices[i]);
+        }
+        return dp.back()[2];
+    }
+};
 int main() {
     Solution solution;
-    vector<int> v{7,1,5,3,6,4};
-    solution.maxProfit(v);
+    vector<int> v{4,1,2,7,5,3,1};
+    solution.rob(v);
 }
