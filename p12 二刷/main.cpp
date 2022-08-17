@@ -436,7 +436,7 @@ public:
   };
 
 
-class Solution {
+class Solutionx {
 public:
     int rob(TreeNode* root) {
         vector<int> res = find(root);
@@ -579,8 +579,31 @@ public:
         return dp.back()[2];
     }
 };
+
+class Solution300 {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        if (nums.size() == 1)
+            return 1;
+        vector<int> dp(nums.size(), 1);
+        int res = 0;
+        for (int i = 1; i < nums.size(); ++i) {
+            int max_index = 0;
+            for (int j = 0; j < i; ++j) {
+                if (nums[j] < nums[i] && dp[j] > max_index)
+                    max_index = dp[j];
+            }
+            dp[i] = max_index + 1;
+            res = max(res, dp[i]);
+        }
+        return res;
+    }
+};
+
+
+
 int main() {
+    vector<int> v{10,9,2,5,3,7,101,18};
     Solution solution;
-    vector<int> v{4,1,2,7,5,3,1};
-    solution.rob(v);
+    cout << solution.lengthOfLIS(v);
 }
