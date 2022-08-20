@@ -5,7 +5,10 @@ using namespace std;
 #include <set>
 #include <list>
 #include <queue>
-
+#include <set>
+#include <unordered_set>
+#include <map>
+#include <unordered_map>
 /*
  * 第一周
  */
@@ -601,9 +604,95 @@ public:
 };
 
 
+class Solution674 {
+public:
+    int findLengthOfLCIS(vector<int>& nums) {
+        int count = 1;
+        int res = 0;
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] > nums[i-1])
+                ++ count;
+            else {
+                res = std::max(count, res);
+                count = 1;
+            }
+        }
+        return res;
+    }
+};
 
+class Solution718 {
+public:
+    int findLength(vector<int>& nums1, vector<int>& nums2) {
+        int maxs = 0;
+        vector<vector<int>> dp(nums1.size()+1, vector<int>(nums2.size()+1, 0));
+        for (int i = 0; i < nums1.size(); ++i) {
+            for (int j = 0; j < nums2.size(); ++j) {
+                if (nums1[i] == nums2[j]) {
+                    dp[i+1][j+1] = 1 + dp[i][j];
+                    maxs = max(dp[i+1][j+1], maxs);
+                }
+            }
+        }
+        return maxs;
+    }
+};
+
+class Solution1143 {
+public:
+    int longestCommonSubsequence(string text1, string text2) {
+        vector<vector<int>> dp(text1.size()+1, vector<int>(text2.size()+1, 0));
+        for (int i = 1; i < dp.size(); ++i) {
+            for (int j = 1; j < dp[0].size(); ++j) {
+                if (text1[i-1] == text2[j-1]) {
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                }else {
+                    dp[i][j] = max(dp[i][j-1], dp[i-1][j]);
+                }
+            }
+        }
+        return dp.back().back();
+    }
+};
+
+class Solution1035 {
+public:
+    int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+
+        vector<vector<int>> dp(nums1.size()+1, vector<int>(nums2.size()+1, 0));
+        for (int i = 1; i < dp.size(); ++i) {
+            for (int j = 1; j < dp[0].size(); ++j) {
+                if (nums1[i-1] == nums2[j-1]) {
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                }else {
+                    dp[i][j] = max(dp[i][j-1], dp[i-1][j]);
+                }
+            }
+        }
+        return dp.back().back();
+    }
+};
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int sum = 0;
+        int res = 0;
+        int mins = INT_MIN;
+        for (const auto &item : nums) {
+            if (item < 0) {
+                mins = max(item, mins);
+            }
+            sum += item;
+            if (sum < 0)
+                sum = 0;
+            res = max(sum, res);
+        }
+        if (min_element(nums.begin(), nums.end()) < 0)
+            return mins;
+        return res;
+    }
+};
 int main() {
-    vector<int> v{10,9,2,5,3,7,101,18};
     Solution solution;
-    cout << solution.lengthOfLIS(v);
+    solution.longestCommonSubsequence("abcde", "ace");
 }
