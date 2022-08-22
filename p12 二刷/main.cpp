@@ -672,27 +672,73 @@ public:
         return dp.back().back();
     }
 };
-class Solution {
+class Solution53 {
 public:
     int maxSubArray(vector<int>& nums) {
+        int maxs = INT_MIN;
         int sum = 0;
-        int res = 0;
-        int mins = INT_MIN;
         for (const auto &item : nums) {
-            if (item < 0) {
-                mins = max(item, mins);
-            }
             sum += item;
+            maxs = (sum, maxs);
             if (sum < 0)
                 sum = 0;
-            res = max(sum, res);
         }
-        if (min_element(nums.begin(), nums.end()) < 0)
-            return mins;
-        return res;
+        return maxs;
+    }
+};
+
+class Solution392 {
+public:
+    bool isSubsequence(string s, string t) {
+        if (s.empty() || t.empty())
+            return false;
+        vector<vector<int>> dp(s.size()+1, vector<int>(t.size()+1, 0));
+        for (int i = 1; i <= t.size(); ++i) {
+            if (s[0] == t[i-1])
+                dp[1][i] = 1;
+            else
+                dp[1][i] = dp[1][i-1];
+        }
+        for (int i = 2; i <= s.size(); ++i) {
+            for (int j = 1; j <= t.size(); ++j) {
+                if (s[i-1] == t[j-1])
+                    dp[i][j] = dp[i-1][j-1];
+                else
+                    dp[i][j] = dp[i][j-1];
+            }
+        }
+        return dp.back().back();
+    }
+};
+
+class Solution {
+public:
+    int numDistinct(string s, string t) {
+        if (s.empty() || t.empty())
+            return 0;
+        s.swap(t);
+        vector<vector<int>> dp(s.size()+1, vector<int>(t.size()+1, 0));
+        // 初始化
+        for (int i = 1; i <= t.size(); ++i) {
+            if (s[0] == t[i-1])
+                dp[1][i] = dp[1][i-1] + 1;
+            else
+                dp[1][i] = dp[1][i-1];
+        }
+        for (int i = 2; i < dp.size(); ++i) {
+            for (int j = 1; j < dp[0].size(); ++j) {
+                if (s[i-1] == t[j-1])
+                    dp[i][j] = max( dp[i][j-1] + 1, dp[i-1][j-1]);
+                else
+                    dp[i][j] = dp[i][j-1];
+            }
+        }
+        return dp.back().back();
     }
 };
 int main() {
     Solution solution;
-    solution.longestCommonSubsequence("abcde", "ace");
+    solution.numDistinct("rabbbit", "rabbit");
+
+
 }

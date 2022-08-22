@@ -64,10 +64,172 @@ public:
     }
 };
 
+vector<int> swapAdjacent(vector<int> array) {
+    if (array.empty())
+        return array;
+    int i = 1;
+    while (i < array.size()) {
+        swap(array[i-1],array[i]);
+        i += 2;
+    }
+    return array;
+}
 
+string countVotes11(vector<string> validCandidates, vector<string> voteCasted) {
+    string str = "";
+    if (voteCasted.empty()) {
+        for (const auto &item : validCandidates) {
+            cout << item << "=" << 0;
+            cout << " ";
+        }
+        cout << "invalidVotes"<< "=" << 0 << " " << "Winner=N/A";
+    }
+
+    vector<int> dp(validCandidates.size(), 0);
+    int sum_vote = 0;
+    for (int i = 0; i < validCandidates.size(); ++i) {
+        for (const auto &item : voteCasted) {
+            if (validCandidates[i] == item) {
+                ++dp[i];
+                ++sum_vote;
+            }
+        }
+    }
+    int invalidVotes = voteCasted.size() - sum_vote;
+    int max_vote = 0;
+    for (int i = 0; i < dp.size(); ++i) {
+        if (dp[i] > dp[max_vote])
+            max_vote = i;
+    }
+    string winer = "";
+    if (invalidVotes > dp[max_vote])
+        winer = "N/A";
+    else
+        winer = validCandidates[max_vote];
+
+    string res = "";
+    for (int i = 0; i < validCandidates.size(); ++i) {
+        res += validCandidates[i] + "=" + to_string(dp[i]) +
+         " " ;
+//        cout << validCandidates[i] << "=" << dp[i];
+//        cout << " " << "invalidVotes=" << invalidVotes << " "
+//        << "Winner="<<  winer << endl;
+    }
+    res += "invalidVotes=" + to_string(invalidVotes) + " "
+           + "Winner=" +  winer;
+
+    return res;
+}
+
+
+string RemoveLetters(string s, vector<char> letters) {
+    for (int i = 0; i < s.size(); ++i) {
+        for (int j = 0; j < letters.size(); ++j) {
+            if (s[i] == letters[j]) {
+                s[i] = '%';
+                continue;
+            }
+        }
+    }
+
+    int left = 0;
+    int right = 0;
+    while (right < s.size()) {
+        if (s[right] != '%') {
+            swap(s[left], s[right]);
+            ++ left;
+            ++ right;
+        } else {
+            ++ right;
+        }
+    }
+    s.resize(left);
+    return s;
+}
+
+
+string countVotes(vector<string> validCandidates, vector<string> voteCasted) {
+
+    vector<int> dp(validCandidates.size(), 0);
+    int sum_vote = 0;
+    for (int i = 0; i < validCandidates.size(); ++i) {
+        for (const auto &item : voteCasted) {
+            if (validCandidates[i] == item) {
+                ++dp[i];
+                ++sum_vote;
+            }
+        }
+    }
+    int invalidVotes = voteCasted.size() - sum_vote;
+    int max_vote = 0;
+    for (int i = 0; i < dp.size(); ++i) {
+        if (dp[i] > dp[max_vote])
+            max_vote = i;
+    }
+    string winer = "";
+    if (voteCasted.size() == 0)
+        winer = "N/A";
+    else if (invalidVotes > dp[max_vote])
+        winer = "N/A";
+    else
+        winer = validCandidates[max_vote];
+
+    string res = "";
+    for (int i = 0; i < validCandidates.size(); ++i) {
+        res += validCandidates[i] + "=" + to_string(dp[i]) +
+               " " ;
+    }
+    res += "invalidVotes=" + to_string(invalidVotes) + " "
+           + "Winner=" +  winer;
+
+    return res;
+}
+
+
+// 可以引入的库和版本相关请参考 “环境说明”
+#include <iostream>
+#include <string>
+using namespace std;
+
+// 本题已设置测试用例
+// 如有需要，请按你的实际需求修改参数和返回值类型
+
+   class LaneNode {
+    public:
+      std::string node_id;
+      std::vector<LaneNode*> next_lanes;
+   };
+
+void doDFS(LaneNode *root, vector<vector<string>> res, vector<string> path) {
+    if (root->next_lanes.empty()) {
+        res.push_back(path);
+        return;
+    }
+    for (const auto &item : root->next_lanes) {
+        path.push_back(item->node_id);
+        doDFS(item, res, path);
+        path.pop_back();
+    }
+    return;
+}
+
+std::vector<std::vector<std::string>> solution(std::vector<LaneNode*> root_lanes)
+{
+    // 在这⾥写代码
+    vector<vector<string>> res;
+    vector<string> path;
+    for (const auto &item : root_lanes) {
+        path.push_back(item->node_id);
+        doDFS(item,res, path);
+        path.pop_back();
+    }
+    return res;
+}
 
 
 
 int main() {
-    string str = "10010";
+    static int a;
+    a = 123;
+    cout << a << endl;
 }
