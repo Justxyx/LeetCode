@@ -92,7 +92,8 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -107,6 +108,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "p1 微软 8.19.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "8.25 安奇信.h",
 			"sourceGroupIndex" : 1
 		}
 	],
