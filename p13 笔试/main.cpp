@@ -225,36 +225,3 @@ std::vector<std::vector<std::string>> solution(std::vector<LaneNode*> root_lanes
     }
     return res;
 }
-
-int solution(int N) {
-    // write your code in C++ (C++14 (g++ 6.2.0))
-    vector<int> v;
-    while (N > 0)  {
-        int temp = N % 10;
-        v.push_back(temp);
-        N /= 10;
-    }
-    std::reverse(v.begin(), v.end());
-    int temp = 0;
-    for (int i = 0; i < v.size(); ++i) {
-        if (v[i] == 5 && i+1 < v.size()) {
-            temp = i;
-            if (v[i] > )
-        }
-    }
-}
-
-
-int main() {
-    int N = 123000;
-    vector<int> v;
-    while (N > 0)  {
-        int temp = N % 10;
-        v.push_back(temp);
-        N /= 10;
-    }
-    std::reverse(v.begin(), v.end());
-    for (const auto &item : v) {
-        cout << item << endl;
-    }
-}
