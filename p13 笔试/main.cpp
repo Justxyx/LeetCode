@@ -229,10 +229,95 @@ public:
     }
 };
 
-
-int main() {
-    Solution solution;
-    solution.snake_matrix(1);
+void solution(vector<int> &v, int k) {
+    std::sort(v.begin(), v.end());
+    int count = 0;
+    double sum = 0;
+    int res = 0;
+    for (int i = 0; i < v.size(); ++i) {
+        count = 0;
+        sum = 0;
+        int mins = INT_MAX;
+        for (int j = i; j < v.size(); ++j) {
+            sum += v[j];
+            ++ count;
+            mins = min(mins, v[j]);
+            if ((sum/count) > k * mins) {
+                res = max(res, count-1);
+                break;
+            }
+        }
+    }
+    cout << res << endl;
+    return;
 }
 
+// 3 2 2
+//int main() {
+//    int n, k;
+//    cin >> n;
+//    cin >> k;
+//    vector<int> v(n, 0);
+//    for (int i = 0; i < n; ++i) {
+//        int temp = 0;
+//        cin >> temp;
+//        v[i] = temp;
+//    }
+//    solution(v, k);
+//    return 0;
+//}
 
+
+/*
+ * 2
+0 1
+0 10
+0 1
+
+ */
+int judeg(int left, int right, int k) {
+    int count = 0;
+    for (int i = left; i <= right; ++i) {
+        if (i == k)
+            ++ count;
+        else if (i > 9){
+            int temp = i;
+            int res = temp % 10;
+            temp = temp/10;
+            while (temp != 0) {
+                int k = temp % 10;
+                temp = temp / 10;
+                res = k ^ res;
+            }
+            if (res == k)
+                ++ count;
+        }
+    }
+    return count;
+}
+void solution(vector<vector<int>> &v, int n) {
+    vector<int> res;
+    for (int i = 0; i < n; ++i) {
+        int s = judeg(v[0][i], v[1][i], v[2][i]);
+        res.push_back(s);
+    }
+    for (int i = 0; i < res.size(); ++i) {
+        cout << res[i] ;
+        if (i != res.size() - 1)
+            cout << " ";
+    }
+    return;
+}
+int main() {
+    int n;
+    cin >> n;
+    vector<vector<int>> v(3, vector<int> (n, 0));
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < n; ++j) {
+            int temp = 0;
+            cin >> temp;
+            v[i][j] = temp;
+        }
+    }
+    solution(v, n);
+}

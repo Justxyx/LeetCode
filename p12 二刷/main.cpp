@@ -11,5 +11,11 @@ using namespace std;
 #include <unordered_map>
 
 
+
+
+
 int main() {
+    vector<int> v{12,16,14,15};
+    Solution solution;
+    cout << solution.minSubArrayLen(20, v);
 }
