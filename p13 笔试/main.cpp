@@ -163,71 +163,7 @@ public:
 };
 
 
-class Solution {
-public:
-    /**
-     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
-     *
-     *
-     * @param n int整型
-     * @return int整型vector<vector<>>
-     */
-    vector<vector<int> > snake_matrix(int n) {
-        // write code here
 
-        vector<vector<int>> v(n, vector<int>(n,-1));
-        int i = 0, j = 0;
-        int pre = 0;
-        int direct = 1;  // 1 下  2 右  3 上  4 左
-        while (i >= 0 && i < n && j >= 0 && j < n && v[i][j] == -1) {
-            v[i][j] = ++ pre;
-
-            if (direct == 1) {
-                if ((i+1 == n) || (v[i+1][j] != -1)) { // 转向
-                    ++ j;
-                    ++ direct;
-                    continue;
-                }
-                ++ i;
-                continue;
-            }
-
-
-            if (direct == 2) {
-                if ((j+1 == n) || (v[i][j+1] != -1)) { // 转向
-                    -- i;
-                    ++ direct;
-                    continue;
-                }
-                ++ j;
-                continue;
-            }
-
-
-            if (direct == 3) {
-                if ((i == 0) || (v[i-1][j] != -1)) { // 转向
-                    -- j;
-                    ++ direct;
-                    continue;
-                }
-                -- i;
-                continue;
-            }
-
-
-            if (direct == 4) {
-                if ((j == 0) || (v[i][j-1] != -1)) { // 转向
-                    ++ i;
-                    direct = 1;
-                    continue;
-                }
-                -- j;
-                continue;
-            }
-        }
-        return v;
-    }
-};
 
 void solution(vector<int> &v, int k) {
     std::sort(v.begin(), v.end());
@@ -268,56 +204,13 @@ void solution(vector<int> &v, int k) {
 //}
 
 
-/*
- * 2
-0 1
-0 10
-0 1
 
- */
-int judeg(int left, int right, int k) {
-    int count = 0;
-    for (int i = left; i <= right; ++i) {
-        if (i == k)
-            ++ count;
-        else if (i > 9){
-            int temp = i;
-            int res = temp % 10;
-            temp = temp/10;
-            while (temp != 0) {
-                int k = temp % 10;
-                temp = temp / 10;
-                res = k ^ res;
-            }
-            if (res == k)
-                ++ count;
-        }
-    }
-    return count;
-}
-void solution(vector<vector<int>> &v, int n) {
-    vector<int> res;
-    for (int i = 0; i < n; ++i) {
-        int s = judeg(v[0][i], v[1][i], v[2][i]);
-        res.push_back(s);
-    }
-    for (int i = 0; i < res.size(); ++i) {
-        cout << res[i] ;
-        if (i != res.size() - 1)
-            cout << " ";
-    }
-    return;
-}
+
+
+
 int main() {
-    int n;
-    cin >> n;
-    vector<vector<int>> v(3, vector<int> (n, 0));
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < n; ++j) {
-            int temp = 0;
-            cin >> temp;
-            v[i][j] = temp;
-        }
-    }
-    solution(v, n);
+    // 'A'   65    '1' 49
+    Solution solution;
+    cout << solution.showDown("SA HA C4 S4 H5 S6");
+
 }

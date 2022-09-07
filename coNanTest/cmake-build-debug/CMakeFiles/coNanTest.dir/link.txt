@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/coNanTest.dir/main.cpp.o  -o coNanTest 
