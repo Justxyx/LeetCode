@@ -12,6 +12,11 @@ using namespace std;
 
 
 
+
 int main() {
+    Solution solution;
+    vector<int> v{
+            1,-1,-1,0};
+    solution.threeSum(v);
 
 }
